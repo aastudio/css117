@@ -1,2 +1,2 @@
 # minimal
-Minimal UI Responsive component
+Minimal Responsive UI component
