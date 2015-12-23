@@ -50,7 +50,7 @@ The ```partials/components/minimalGrid.scss``` file offers few variables that ca
 - [```Mobile first```](#user-content-mobile-first)
 - [```floats``` or ```inline-block```](#user-content-floats-or-inline-block)
 - [```Development mode```](#user-content-development-mode)
-- [```One width for the 'small' breakpoint```](#user-content-one-width-for-the-small-breakpoint)
+- [```A unique column width for the 'small' breakpoint```](#user-content-one-width-for-the-small-breakpoint)
 - [```Offset classes```](#user-content-offset-classes)
 - [```Visibility classes```](#user-content-visibility-offset-classes)
 - [```Customizable class names```](#user-content-customizable-class-names)
@@ -91,7 +91,7 @@ Soon a [```flexbox```](http://www.w3.org/TR/css-flexbox-1/) option will be avail
 
 If set to true, it adds a pink transparent background-color behind elements and blue sides border to each columns.
 
-### One width for the 'small' breakpoint
+### A unique column width for the 'small' breakpoint
 
 By default, each columns of the ```small```breakpoints have individual sizes. But in real use, you might want to set a full width for each columns from the small breakpoint.<br/>
 
