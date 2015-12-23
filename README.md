@@ -124,7 +124,6 @@ Each class name can be customized regarding your naming convention preferences (
 
 ## TODO
 
-- create a bower package
 - create a demo page
 - create a npm package
 - create a flexbox version
