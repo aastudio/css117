@@ -50,7 +50,7 @@ The ```partials/components/minimalGrid.scss``` file offers few variables that ca
 - [```Mobile first```](#user-content-mobile-first)
 - [```floats``` or ```inline-block```](#user-content-floats-or-inline-block)
 - [```Development mode```](#user-content-development-mode)
-- [```A unique column width for the 'small' breakpoint```](#user-content-one-width-for-the-small-breakpoint)
+- [```A unique column width for the 'small' breakpoint```](#user-content-a-unique-column-width-for-the-small-breakpoint)
 - [```Offset classes```](#user-content-offset-classes)
 - [```Visibility classes```](#user-content-visibility-offset-classes)
 - [```Customizable class names```](#user-content-customizable-class-names)
