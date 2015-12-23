@@ -1,0 +1,67 @@
+//------------------------------------
+// FUNCTIONS
+//
+// CONTENTS :
+//
+// - strip-units
+// - pixels to rems
+// - pixels to ems
+//
+//------------------------------------
+
+//!\ No dependencies
+
+
+
+// Variables
+// ----------------------------------------
+
+$em-base: 16 !default;
+
+
+
+
+// ====================================================================//
+// Do not modify from here
+// ====================================================================//
+
+
+// Strips the unit from a number.
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_strip-units.scss
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+
+
+// Convert pixels to rems
+// eg. for a relational value of 12px write rem(12)
+// Assumes $em-base is the font-size of <html>
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_px-to-rem.scss
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: $em-base;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1rem;
+}
+
+
+
+// Convert pixels to ems
+// eg. for a relational value of 12px write em(12) when the parent is 16px
+// if the parent is another value say 24px write em(12, 24)
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_px-to-em.scss
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}

@@ -1,0 +1,84 @@
+//------------------------------------
+//  #MEDIA QUERIES MIXIN
+//------------------------------------
+
+//!\ Dependencies :
+// @import '../functions/units';
+
+
+
+// Variables
+// ----------------------------------------
+
+// 01. Are you mobile first ?
+$mobile-first: false !default; // Add this variable in partials/_variables.scss to modify it 
+
+// 02. If mobile first, inverse the order of breakpoints below
+// 03. Units : You can use either 'rem', 'em' and 'px'
+$breakpoints: (
+    medium:     800px,
+    small:      500px,
+) !default;
+
+// 04. If mobile first, the first class is named, by default, 'small' and 'large' if not. To modify it, change the variable $globalBkpt
+@if $mobile-first { $globalBkpt: 'small' !default !global; } 
+            @else { $globalBkpt: 'large' !default !global; }
+
+
+
+
+
+// ====================================================================//
+// Do not modify from here
+// ====================================================================//
+
+// Media query from a defined named width
+//
+// ex: .foo { @include mq(medium) {...} }
+// ex: .foo { @include mq(320) {...} }
+// ex: .foo { @include mq(50rem) {...} }
+// ex: .foo { @include mq(45em) {...} }
+// ex: .foo { @include mq(320px) {...} }
+
+@mixin mq($media-query){
+
+    @if $mobile-first {
+        $query: 'min-width' !global;
+    } @else {
+        $query: 'max-width' !global;
+    }
+
+    @if type-of($media-query) == string {
+
+        @if map-has-key($breakpoints, $media-query) { 
+            @each $breakpoint, $size in $breakpoints {
+                @if $media-query == $breakpoint {
+
+                    @if (unitless($size)) or (unit($size) == 'px') {
+                        @media ($query: rem($size)) { @content; }
+                    } 
+                    @else if (unit($size) == 'em') or (unit($size) == 'rem') {
+                        @media ($query: $size) { @content; }
+                    }
+                }
+            }
+        }
+        @else { @error("\a '#{$media-query}' does not exist in your map $breakpoints.\a"); }
+    }
+
+    @else if type-of($media-query) == number {
+
+        @if not unitless($media-query) {
+            @if 
+                unit($media-query) != 'px' and unit($media-query) != 'rem' and unit($media-query) != 'em' 
+                { @error "\a '#{unit($media-query)}' is not a valid unit for the mq mixin (_mixins.scss). \a You can use only pixel, rem or em.\a" };
+        }
+
+        @if (unit($media-query) == 'px') or unitless($media-query) {
+            @media ($query: rem($media-query) ) { @content; }
+        } 
+        @else if (unit($media-query) == 'em') or (unit($media-query) == 'rem'){
+            @media ($query: $media-query) { @content; }
+        }
+    }
+}
