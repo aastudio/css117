@@ -13,7 +13,7 @@ Download the latest release and put the SASS folder in your website directory. I
 With the Terminal, go to the desired folder to run SASS: 
 
 ```CLI
-sass --watch src/sass/main.scss:dist/css//main.css --style compressed
+sass --watch src/sass/main.scss:dist/css/main.css
 ```
 **NOTE** or run it with a task runner : [Gulp](https://www.npmjs.com/package/gulp-sass/), [Grunt](https://www.npmjs.com/package/grunt-sass/), [Broccoli](https://www.npmjs.com/package/broccoli-sass/), ...
 
