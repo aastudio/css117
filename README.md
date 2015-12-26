@@ -1,6 +1,6 @@
-# minimalUI
+# CSS117
 
-minimalUI provides minimalist, lightweight & effectives Responsive components.
+A lightweight, minimalist and Responsive frontend CSS/SASS framework
 
 ## minimalGrid
 
