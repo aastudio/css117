@@ -1,0 +1,21 @@
+//----------------------------------------------------------------------
+//  Single-direction margin declarations
+//  http://csswizardry.com/2012/06/single-direction-margin-declarations/
+//----------------------------------------------------------------------
+
+//!\ No dependencies
+
+
+
+// Variables
+// ----------------------------------------
+
+$baseline: 30px !default; 
+
+
+// ex: .foo { @include baseline; }
+// ex: .foo { @include baseline(3); }
+@mixin baseline($time: 1) {
+    margin-top: 0;
+    margin-bottom: $baseline*$time;
+}
