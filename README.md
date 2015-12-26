@@ -129,6 +129,14 @@ Each class name can be customized regarding your naming convention preferences (
 - create a flexbox version
 - made an online generator for non-SASS users
 
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
 ## License
 
 The code and the documentation are released under the [MIT License](LICENSE).
