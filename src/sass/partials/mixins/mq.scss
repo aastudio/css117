@@ -14,13 +14,13 @@
 $mobile-first: false !default; // Add this variable in partials/_variables.scss to modify it 
 
 // 02. If mobile first, inverse the order of breakpoints below
-// 03. Units : You can use either 'rem', 'em' and 'px'
+// Units : You can use either 'rem', 'em' and 'px'
 $breakpoints: (
     medium:     800px,
     small:      500px,
 ) !default;
 
-// 04. If mobile first, the first class is named, by default, 'small' and 'large' if not. To modify it, change the variable $globalBkpt
+// 03. If mobile first, the first class is named, by default, 'small' and 'large' if not. To modify it, change the variable $globalBkpt
 @if $mobile-first { $globalBkpt: 'small' !default !global; } 
             @else { $globalBkpt: 'large' !default !global; }
 
