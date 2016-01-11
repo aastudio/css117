@@ -2,7 +2,7 @@
 
 A lightweight, minimalist and Responsive frontend CSS/SASS framework
 
-## minimalGrid
+## Grid
 
 A minimal, lightweight (~ 3Ko minified) and highly customizable grid. If **you just need a grid**, minimalGrid is what you need by providing **only the necessary code**.
 
