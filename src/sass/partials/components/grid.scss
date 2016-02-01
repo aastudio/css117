@@ -28,7 +28,7 @@ $grid: (
 $positionScheme: 'inline-block'; // 'float'
 
 // Centered grid ?
-$centered: false !default; // Add a background-color behind elements
+$centered: false !default; // Simulate a margin-left and margin-right : auto
 
 // Are you in development mode ?
 $dev: 	false !default; // Add a background-color behind elements
