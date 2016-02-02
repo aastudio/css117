@@ -4,9 +4,8 @@
 
 // /!\ Dependencies
 // ----------------------------------------
-// @import '../mixins/baseline';
+
 // @import '../mixins/mq';
-// @import '../utils/helpers'; // if $positionScheme: 'float'
 
 
 // Help
@@ -32,25 +31,30 @@
 
 // Grid dimensions
 $css117-grid: (
-	width:			1000px,
-	gutter-width:	20px,
-	rowPadding: 	10px,
-	colPadding:		50px,
-	nb-of-columns:	12,
+	nb-of-columns:	 12,
 
-	positionScheme: 'inline-block',
+	width:			 1000px,
+	gutter-width:	 20px,
 
-	row: 			'cols',
-	col: 		 	'col',
-	offsetClass:	'offset',
+	rowPadding: 	 10px,
+	colPadding:		 50px,
 
-	centered: 		false,
-	small: 			false,
-	offset: 		false,
-	visibility: 	false,
+	rowMarginBottom: 30px,
+	colMarginBottom: 30px,
 
-	dev: 			false,
-	debug: 			false
+	positionScheme:  'inline-block',
+
+	row: 			 'cols',
+	col: 		 	 'col',
+	offsetClass:	 'offset',
+
+	centered: 		 false,
+	small: 			 false,
+	offset: 		 false,
+	visibility: 	 false,
+
+	dev: 			 false,
+	debug: 			 false
 ) !default;
 
 
@@ -73,6 +77,17 @@ $css117-grid-max-width: map-get($css117-grid, width) * ( 1 + ( $css117-gutterPer
 $css117-grid-marginLeft:map-get($css117-grid, gutter-width) / $css117-grid-max-width * 100%;
 
 
+// Helpers
+// -----------------------------------
+
+%css117-cf {
+	&::before,
+	&::after {
+    	content: "";
+    	display: table;
+    }
+    &::after { clear: both; }
+}
 
 
 // Create two classes : .row & .col
@@ -82,9 +97,11 @@ $css117-grid-marginLeft:map-get($css117-grid, gutter-width) / $css117-grid-max-w
 .#{map-get($css117-grid, row)} {
 	max-width: $css117-grid-max-width;
 	box-sizing: border-box;
-	padding: map-get($css117-grid, rowPadding);
 
-	@include baseline(1); // cf. _mixins.scss
+	margin-top: 0;
+	margin-bottom: map-get($css117-grid, rowMarginBottom);
+
+	padding: map-get($css117-grid, rowPadding);
 
 	@if map-get($css117-grid, centered) {
 		margin-right: auto;
@@ -94,7 +111,7 @@ $css117-grid-marginLeft:map-get($css117-grid, gutter-width) / $css117-grid-max-w
 	@media( max-width: map-get($css117-grid, width) ){ margin-left: -$css117-gutterPerc; }
 
 	@if map-get($css117-grid, positionScheme) == 'inline-block' 	{ font-size: 0; }
-	@else if map-get($css117-grid, positionScheme) == 'float' 	{ @extend %cf; }
+	@else if map-get($css117-grid, positionScheme) == 'float' 	{ @extend %css117-cf; }
 
 	@if map-get($css117-grid, dev) {
 		/* for development mode only */
@@ -105,12 +122,14 @@ $css117-grid-marginLeft:map-get($css117-grid, gutter-width) / $css117-grid-max-w
 
 	.#{map-get($css117-grid, col)} {
 		box-sizing: border-box;
+
+		margin-top: 0;
+		margin-bottom: map-get($css117-grid, colMarginBottom);
 		margin-left: $css117-grid-marginLeft;
+
 		padding: map-get($css117-grid, colPadding);
 
 		img { max-width: 100%; }
-
-		@include baseline(1); // cf. _mixins.scss
 
 		@if map-get($css117-grid, positionScheme) == 'inline-block' {
 			display: inline-block;
