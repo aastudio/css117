@@ -159,33 +159,33 @@ $css117-grid-marginLeft:map-get($css117-grid, gutter-width) / $css117-grid-max-w
 }
 
 // Apply mq-loop to each column size from 1 to $css117-colNb (default: 12)
-@mixin grid-math($css117-colNb,$breakpoint,$css117-gutterPerc) {
+@mixin grid-math($css117-colNb,$css117-breakpoint,$css117-gutterPerc) {
 
-	@if $breakpoint == 'small' and map-get($css117-grid, small) {
+	@if $css117-breakpoint == 'small' and map-get($css117-grid, small) {
 		.col { width: mq-loop($css117-gutterPerc, $css117-colNb, $css117-colNb); }
 	}
 
 	@else {
 		@for $i from 1 to ($css117-colNb) {
-			.#{$breakpoint}-#{$i} { width: mq-loop($css117-gutterPerc, $i, $css117-colNb); }
+			.#{$css117-breakpoint}-#{$i} { width: mq-loop($css117-gutterPerc, $i, $css117-colNb); }
 		}
-		.#{$breakpoint}-#{$css117-colNb} { width: mq-loop($css117-gutterPerc, $css117-colNb, $css117-colNb); }
+		.#{$css117-breakpoint}-#{$css117-colNb} { width: mq-loop($css117-gutterPerc, $css117-colNb, $css117-colNb); }
 	}
 
 
 	// Create offset classes
 	@if map-get($css117-grid, offset) {
 		@for $i from 1 to ($css117-colNb) {
-			.#{$breakpoint}-#{map-get($css117-grid, offsetClass)}-#{$i} { margin-left: mq-loop($css117-gutterPerc, $i, $css117-colNb) + 2 * $css117-grid-marginLeft; }
+			.#{$css117-breakpoint}-#{map-get($css117-grid, offsetClass)}-#{$i} { margin-left: mq-loop($css117-gutterPerc, $i, $css117-colNb) + 2 * $css117-grid-marginLeft; }
 		}
-		.#{$breakpoint}-no-#{map-get($css117-grid, offsetClass)} { margin-left: $css117-grid-marginLeft; }
+		.#{$css117-breakpoint}-no-#{map-get($css117-grid, offsetClass)} { margin-left: $css117-grid-marginLeft; }
 	}
 
 
 	// Some helpers
 	@if map-get($css117-grid, visibility) {
-		.#{$breakpoint}-hidden  { display: none; }
-		.#{$breakpoint}-visible { display: initial; }
+		.#{$css117-breakpoint}-hidden  { display: none; }
+		.#{$css117-breakpoint}-visible { display: initial; }
 	}
 }
 
@@ -196,12 +196,12 @@ $css117-grid-marginLeft:map-get($css117-grid, gutter-width) / $css117-grid-max-w
 // -------------------------------------
 
 // 01. Display general values ; by default 'large' if $mobile-first: false (see mixins/mq.scss)
-@include grid-math($css117-colNb, $globalBkpt ,$css117-gutterPerc);
+@include grid-math($css117-colNb, $css117-globalBkpt ,$css117-gutterPerc);
 
 // 02. Display values for each breakpoints
-@each $breakpoint, $value in $breakpoints {
+@each $css117-breakpoint, $value in $css117-breakpoints {
 	@include mq($value) {
-		@include grid-math($css117-colNb,$breakpoint,$css117-gutterPerc);
+		@include grid-math($css117-colNb,$css117-breakpoint,$css117-gutterPerc);
 	}
 }
 
