@@ -2,10 +2,6 @@
 //  #MEDIA QUERIES MIXIN
 //------------------------------------
 
-//!\ Dependencies :
-// @import '../functions/units';
-
-
 
 // Variables
 // ----------------------------------------
@@ -46,8 +42,38 @@ $css117-breakpoints: null;
 // Do not modify from here
 // ====================================================================//
 
+
+// Units functions
+// ----------------------------------------
+
+$em-base: 16 !default;
+
+// Strips the unit from a number.
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_strip-units.scss
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+
+// Convert pixels to rems
+// eg. for a relational value of 12px write rem(12)
+// Assumes $em-base is the font-size of <html>
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_px-to-rem.scss
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: $em-base;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1rem;
+}
+
+
 // Media query from a defined named width
-//
+// ----------------------------------------
 // ex: .foo { @include mq(medium) {...} }
 // ex: .foo { @include mq(320) {...} }
 // ex: .foo { @include mq(50rem) {...} }
