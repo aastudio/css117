@@ -7,15 +7,11 @@
 // Variables
 @import 'partials/variables';
 
-// Utils
-@import 'partials/utils/helpers';
-
 // Functions
 @import 'partials/functions/units';
 
 // Mixins
-@import 'partials/mixins/baseline';
-@import 'partials/mixins/mq';
+@import 'partials/mixins/css117-mixin-mediaQueries.scss';
 
 // Layout style
-@import 'partials/components/css117-grid';
+@import 'partials/components/css117-component-grid';
