@@ -8,6 +8,7 @@
 
 $css117-mediaqueries: (
     mobile-first: false,
+    debug: false
 ) !default;
 
 
@@ -72,14 +73,49 @@ $em-base: 16 !default;
 }
 
 
-// Media query from a defined named width
-// ----------------------------------------
-// ex: .foo { @include mq(medium) {...} }
-// ex: .foo { @include mq(320) {...} }
-// ex: .foo { @include mq(50rem) {...} }
-// ex: .foo { @include mq(45em) {...} }
-// ex: .foo { @include mq(320px) {...} }
 
+// Function
+// ----------------------------------------
+
+// Legacy to https://gist.github.com/seanislegend
+// https://gist.github.com/seanislegend/107ccf9c81ec9fd1aae0
+@function mapReverse ($map) {
+    $result: null;
+
+    @if type-of($map) == "map" {
+        $keys: map-keys($map);
+        $map-reversed: ();
+
+        @for $i from length($keys) through 1 {
+            $map-reversed: map-merge(
+                $map-reversed,
+                (nth($keys, $i): map-get($map, nth($keys, $i)))
+            );
+        }
+
+        @if type-of($map-reversed) == "map" {
+            $result: $map-reversed;
+        } @else {
+            @warn 'There was an error reversing the order of "#{$map}"';
+        }
+    } @else {
+        @warn '"#{$map}" is not a valid map';
+    }
+
+    @return $result;
+}
+
+@if map-get($css117-mediaqueries, mobile-first) {
+    $css117-breakpoints: mapReverse($css117-breakpoints);
+}
+
+@if map-get($css117-mediaqueries, debug) {
+    @debug $css117-breakpoints;
+}
+
+
+// Media Queries
+// ----------------------------------------
 @mixin mq($media-query){
 
     @if map-get($css117-mediaqueries, mobile-first) {
