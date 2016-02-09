@@ -1,13 +1,15 @@
 {
-  "name": "minimalUI",
-  "version": "1.0.1",
-  "homepage": "https://github.com/aastudio/minimal",
+  "name": "css117",
+  "version": "1.0.0",
+  "homepage": "https://github.com/aastudio/CSS117",
   "authors": [
-    "aaries <aurelien@aastudio.fr>"
+    "aastudio <aurelien@aastudio.fr>"
   ],
-  "description": "Minimalist frontend CSS framework which provides lightweight & effectives Responsive components",
+  "description": "A lightweight & minimalist SASS library of components",
   "main": "src/sass/main.scss",
-  "moduleType": [],
+  "moduleType": [
+    "globals"
+  ],
   "keywords": [
     "responsive",
     "css",

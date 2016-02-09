@@ -90,8 +90,8 @@ $em-base: 16 !default;
 
     @if type-of($media-query) == string {
 
-        @if map-has-key($css117-breakpointss, $media-query) {
-            @each $css117-breakpoints, $size in $css117-breakpointss {
+        @if map-has-key($css117-breakpoints, $media-query) {
+            @each $css117-breakpoints, $size in $css117-breakpoints {
                 @if $media-query == $css117-breakpoints {
 
                     @if (unitless($size)) or (unit($size) == 'px') {
@@ -103,7 +103,7 @@ $em-base: 16 !default;
                 }
             }
         }
-        @else { @error("\a '#{$media-query}' does not exist in your map $css117-breakpointss.\a"); }
+        @else { @error("\a '#{$media-query}' does not exist in your map $css117-breakpoints.\a"); }
     }
 
     @else if type-of($media-query) == number {
