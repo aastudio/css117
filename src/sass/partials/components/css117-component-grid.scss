@@ -197,12 +197,12 @@ $css117-grid-marginLeft:map-get($css117-grid, gutter-width) / $css117-grid-max-w
 // -------------------------------------
 
 // 01. Display general values ; by default 'large' if $mobile-first: false (see mixins/mq.scss)
-@include grid-math($css117-colNb, $css117-globalBkpt ,$css117-gutterPerc);
+@include grid-math($css117-colNb, $css117-globalBkpt, $css117-gutterPerc);
 
 // 02. Display values for each breakpoints
 @each $css117-breakpoint, $value in $css117-breakpoints {
 	@include mq($value) {
-		@include grid-math($css117-colNb,$css117-breakpoint,$css117-gutterPerc);
+		@include grid-math($css117-colNb, $css117-breakpoint, $css117-gutterPerc);
 	}
 }
 
