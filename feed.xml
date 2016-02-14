@@ -4,10 +4,10 @@
     <title>CSS117</title>
     <description>A light and minimalistic library of pluggable, dry, scalable, modular and Responsive SASS components.
 </description>
-    <link>http://css117.io/css117/</link>
-    <atom:link href="http://css117.io/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 14 Feb 2016 10:50:33 +0100</pubDate>
-    <lastBuildDate>Sun, 14 Feb 2016 10:50:33 +0100</lastBuildDate>
+    <link>http://aastudio.github.io/css117/css117/</link>
+    <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 14 Feb 2016 10:53:19 +0100</pubDate>
+    <lastBuildDate>Sun, 14 Feb 2016 10:53:19 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -101,8 +101,8 @@
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: The mixin automatically choose between &lt;code class=&quot;highlighter-rouge&quot;&gt;max-width&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;min-width&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Dec 2015 00:00:00 +0100</pubDate>
-        <link>http://css117.io/css117/mq.html</link>
-        <guid isPermaLink="true">http://css117.io/css117/mq.html</guid>
+        <link>http://aastudio.github.io/css117/css117/mq.html</link>
+        <guid isPermaLink="true">http://aastudio.github.io/css117/css117/mq.html</guid>
         
         
       </item>
@@ -351,8 +351,8 @@
 
 </description>
         <pubDate>Mon, 28 Dec 2015 00:00:00 +0100</pubDate>
-        <link>http://css117.io/css117/grid.html</link>
-        <guid isPermaLink="true">http://css117.io/css117/grid.html</guid>
+        <link>http://aastudio.github.io/css117/css117/grid.html</link>
+        <guid isPermaLink="true">http://aastudio.github.io/css117/css117/grid.html</guid>
         
         
       </item>
@@ -422,8 +422,8 @@
 
 </description>
         <pubDate>Wed, 28 Oct 2015 00:00:00 +0100</pubDate>
-        <link>http://css117.io/css117/installation.html</link>
-        <guid isPermaLink="true">http://css117.io/css117/installation.html</guid>
+        <link>http://aastudio.github.io/css117/css117/installation.html</link>
+        <guid isPermaLink="true">http://aastudio.github.io/css117/css117/installation.html</guid>
         
         
       </item>
