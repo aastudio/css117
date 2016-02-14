@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 14 Feb 2016 14:20:02 +0100</pubDate>
-    <lastBuildDate>Sun, 14 Feb 2016 14:20:02 +0100</lastBuildDate>
+    <pubDate>Sun, 14 Feb 2016 14:25:30 +0100</pubDate>
+    <lastBuildDate>Sun, 14 Feb 2016 14:25:30 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -69,8 +69,8 @@
 &lt;ul&gt;
   &lt;li&gt;If &lt;code class=&quot;highlighter-rouge&quot;&gt;mobile-first&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; :
     &lt;ul&gt;
-      &lt;li&gt;don’t include &lt;code class=&quot;highlighter-rouge&quot;&gt;large&lt;/code&gt; in your map&lt;/li&gt;
-      &lt;li&gt;declare you breakpoint from wide to narrow&lt;/li&gt;
+      &lt;li&gt;don’t declare the &lt;code class=&quot;highlighter-rouge&quot;&gt;large&lt;/code&gt; breakpoint in your map&lt;/li&gt;
+      &lt;li&gt;order your breakpoint from wide to narrow&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -85,8 +85,8 @@
 &lt;ul&gt;
   &lt;li&gt;If &lt;code class=&quot;highlighter-rouge&quot;&gt;mobile-first&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; :
     &lt;ul&gt;
-      &lt;li&gt;don’t include &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; in your map&lt;/li&gt;
-      &lt;li&gt;declare you breakpoint from narrow to wide&lt;/li&gt;
+      &lt;li&gt;don’t declare the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; breakpoint in your map&lt;/li&gt;
+      &lt;li&gt;order your breakpoint from narrow to wide&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
