@@ -4,7 +4,7 @@ A lightweight, minimalist and Responsive frontend CSS/SASS framework
 
 ## USAGE
 
-Documentation : https://github.com/aastudio/CSS117
+Documentation : http://css117.io
 
 
 ## TODO
