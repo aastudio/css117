@@ -3,13 +3,10 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
+	Aurélien Aries -- Front-end Architecte -- aa_studio
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    Jekyll
+    SASS, HTML5
+    jQuery, Modernizr, Normalize.css
