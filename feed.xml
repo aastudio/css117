@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 14 Feb 2016 14:25:30 +0100</pubDate>
-    <lastBuildDate>Sun, 14 Feb 2016 14:25:30 +0100</lastBuildDate>
+    <pubDate>Sun, 14 Feb 2016 14:30:08 +0100</pubDate>
+    <lastBuildDate>Sun, 14 Feb 2016 14:30:08 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -115,7 +115,12 @@
 
 &lt;h2 id=&quot;basics&quot;&gt;Basics&lt;/h2&gt;
 
-&lt;p&gt;Considering one of the above map, you can set up your HTML like this.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;No need to wrap each row&lt;/strong&gt; nor to add a &lt;code class=&quot;highlighter-rouge&quot;&gt;.last&lt;/code&gt; class on the last column&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mobile first&lt;/strong&gt; or not&lt;/li&gt;
+  &lt;li&gt;Highly &lt;strong&gt;customizable&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Set up your HTML like this :&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6 small-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-4 medium-6 small-12 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
