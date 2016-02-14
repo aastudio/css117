@@ -1,2 +1,7 @@
 # CSS117
-A light and minimalistic library of pluggable SASS components
+
+A lightweight, minimalist and Responsive frontend CSS/SASS framework
+
+## USAGE
+
+Documentation : http://css117.io
