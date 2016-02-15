@@ -139,7 +139,7 @@ $em-base: 16 !default;
                 }
             }
         }
-        @else { @error("\a '#{$media-query}' does not exist in your map $css117-breakpoints.\a"); }
+        // @else { @error("\a '#{$media-query}' does not exist in your map $css117-breakpoints.\a"); }
     }
 
     @else if type-of($media-query) == number {
