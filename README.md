@@ -10,7 +10,8 @@ Documentation : http://css117.io
 ## TODO
 
 - create a npm package
-- create a flexbox version for the Responsive Grid
+- create a CSS Grid version 
+- ~~create a flexbox version for the Responsive Grid~~
 - made an online generator for non-SASS users
 
 ## Contributing
