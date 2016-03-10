@@ -1,6 +1,6 @@
 # CSS117
 
-A lightweight, minimalist and Responsive frontend CSS/SASS framework
+A lightweight, minimalist and Responsive frontend CSS/Sass framework
 
 ## USAGE
 
@@ -12,7 +12,7 @@ Documentation : http://css117.io
 - create a npm package
 - create a CSS Grid version 
 - ~~create a flexbox version for the Responsive Grid~~
-- made an online generator for non-SASS users
+- made an online generator for non-Sass users
 
 ## Contributing
 
