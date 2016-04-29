@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Apr 2016 15:34:08 +0200</pubDate>
-    <lastBuildDate>Fri, 29 Apr 2016 15:34:08 +0200</lastBuildDate>
+    <pubDate>Fri, 29 Apr 2016 15:42:04 +0200</pubDate>
+    <lastBuildDate>Fri, 29 Apr 2016 15:42:04 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -66,13 +66,11 @@
 
 &lt;h2 id=&quot;mobile-first&quot;&gt;Mobile First&lt;/h2&gt;
 
+&lt;h3 id=&quot;if-mobile-first-is-false&quot;&gt;If &lt;code class=&quot;highlighter-rouge&quot;&gt;mobile-first&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/h3&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;If &lt;code class=&quot;highlighter-rouge&quot;&gt;mobile-first&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;don’t declare the &lt;code class=&quot;highlighter-rouge&quot;&gt;large&lt;/code&gt; breakpoint in your map&lt;/li&gt;
-      &lt;li&gt;order your breakpoint from wide to narrow&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;don’t declare the &lt;code class=&quot;highlighter-rouge&quot;&gt;large&lt;/code&gt; breakpoint in your map&lt;/li&gt;
+  &lt;li&gt;order your breakpoint from wide to narrow&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$css117-mediaqueries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mobile-first&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -82,13 +80,11 @@
     &lt;span class=&quot;n&quot;&gt;small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;500px&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+&lt;h3 id=&quot;if-mobile-first-is-true-&quot;&gt;If &lt;code class=&quot;highlighter-rouge&quot;&gt;mobile-first&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; :&lt;/h3&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;If &lt;code class=&quot;highlighter-rouge&quot;&gt;mobile-first&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;don’t declare the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; breakpoint in your map&lt;/li&gt;
-      &lt;li&gt;order your breakpoint from narrow to wide&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;don’t declare the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; breakpoint in your map&lt;/li&gt;
+  &lt;li&gt;order your breakpoint from narrow to wide&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$css117-mediaqueries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mobile-first&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
