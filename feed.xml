@@ -6,19 +6,21 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Apr 2016 14:14:30 +0200</pubDate>
-    <lastBuildDate>Wed, 27 Apr 2016 14:14:30 +0200</lastBuildDate>
+    <pubDate>Fri, 29 Apr 2016 15:34:08 +0200</pubDate>
+    <lastBuildDate>Fri, 29 Apr 2016 15:34:08 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>Media Queries mixin</title>
-        <description>&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;presentation&quot;&gt;Presentation&lt;/h2&gt;
 
-&lt;p&gt;It’s all explained on &lt;a href=&quot;installation.html&quot;&gt;this page&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Set as much as breakpoints you want&lt;/li&gt;
+  &lt;li&gt;Choose to work mobile first or not&lt;/li&gt;
+  &lt;li&gt;Set queries from either variables &lt;strong&gt;names&lt;/strong&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;px&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;em&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt;. Every query is convert into &lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h2 id=&quot;basics&quot;&gt;Basics&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.foo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.foo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;mq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;350&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#999&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;mq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;350px&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#999&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;mq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;28rem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#888&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -34,11 +36,9 @@
 &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;17rem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.foo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#333&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;31.25rem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.foo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ddd&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Have as much as breakpoints you want&lt;/li&gt;
-  &lt;li&gt;Decide to work mobile first or not&lt;/li&gt;
-  &lt;li&gt;Set queries from either variables &lt;strong&gt;names&lt;/strong&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;px&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;em&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt;. Every query is convert into &lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;It’s all explained on the &lt;a href=&quot;installation.html&quot;&gt;Get Started&lt;/a&gt; page.&lt;/p&gt;
 
 &lt;h2 id=&quot;small-medium-large-&quot;&gt;small, medium, large, …&lt;/h2&gt;
 
@@ -109,35 +109,13 @@
     
       <item>
         <title>Responsive Grid</title>
-        <description>&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;It’s all explained on &lt;a href=&quot;installation.html#example&quot;&gt;this page&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;basics&quot;&gt;Basics&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;presentation&quot;&gt;Presentation&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;No need to wrap each row&lt;/strong&gt; nor to add a &lt;code class=&quot;highlighter-rouge&quot;&gt;.last&lt;/code&gt; class on the last column&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Mobile first&lt;/strong&gt; or not&lt;/li&gt;
-  &lt;li&gt;Highly &lt;strong&gt;customizable&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Set up your HTML like this :&lt;/li&gt;
+  &lt;li&gt;Very &lt;strong&gt;customizable&lt;/strong&gt; through &lt;a href=&quot;#customize-variables&quot;&gt;variables&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6 small-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-4 medium-6 small-12 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6 small-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-4 medium-6 small-12 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-4 medium-12 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-6 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-6 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-5&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-5 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-3 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div class=&quot;doc&quot;&gt;
     &lt;div class=&quot;cols&quot;&gt;
@@ -158,6 +136,29 @@
     &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;It’s all explained on the &lt;a href=&quot;installation.html&quot;&gt;Get Started&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;h2 id=&quot;set-up-your-html&quot;&gt;Set up your html&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6 small-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-4 medium-6 small-12 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6 small-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-4 medium-6 small-12 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-4 medium-12 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-6 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-6 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-5&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-5 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-3 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; large-2 medium-4 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;strong&gt;NOTE :&lt;/strong&gt; The widest breakpoint is always named &lt;code class=&quot;highlighter-rouge&quot;&gt;large&lt;/code&gt; and the narrowest &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt;. You can add any other breakpoint between.&lt;/p&gt;
 
 &lt;!-- ## Features
@@ -170,7 +171,7 @@
 - If necessary choose a positionning scheme between inline-block, float and soon **flexbox**
 - also : offset classes, visibilty classes, development mode ... --&gt;
 
-&lt;h2 id=&quot;default-variables&quot;&gt;Default variables&lt;/h2&gt;
+&lt;h2 id=&quot;customize-variables&quot;&gt;Customize variables&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -287,42 +288,37 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&quot;if-plugged-with-the-media-queries-mixinmqhtml&quot;&gt;If plugged with the &lt;a href=&quot;mq.html&quot;&gt;Media Queries mixin&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;use-jointly-with-the-media-queries-mixinmqhtml&quot;&gt;Use jointly with the &lt;a href=&quot;mq.html&quot;&gt;Media Queries mixin&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p&gt;Copy the following map in you project :&lt;/p&gt;
+&lt;p&gt;Copy the map from the file &lt;code class=&quot;highlighter-rouge&quot;&gt;partials/mixins/css117-mixin-mediaQueries.scss&lt;/code&gt; in you project &lt;strong&gt;or&lt;/strong&gt; create of SASS map of breakpoints called &lt;code class=&quot;highlighter-rouge&quot;&gt;$breakpoints&lt;/code&gt; (name is mandatory):&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$css117-breakpoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;800px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;500px&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-&lt;h2 id=&quot;else&quot;&gt;else&lt;/h2&gt;
+&lt;span class=&quot;cm&quot;&gt;/* OR */&lt;/span&gt;
 
-&lt;p&gt;You need to create of SASS map of breakpoints called &lt;code class=&quot;highlighter-rouge&quot;&gt;$breakpoints&lt;/code&gt; (name is mandatory).&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$breakpoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$breakpoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;800px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;500px&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;floats-or-inline-block&quot;&gt;floats or inline-block&lt;/h2&gt;
+&lt;h2 id=&quot;floats-or-inline-block-&quot;&gt;floats or inline-block ?&lt;/h2&gt;
 
 &lt;p&gt;Don’t know the difference between both ? check &lt;a href=&quot;http://www.vanseodesign.com/blog/demo/inline-block/&quot;&gt;this page&lt;/a&gt;.&lt;/p&gt;
 
+&lt;h3 id=&quot;with-inline-block-&quot;&gt;With &lt;code class=&quot;highlighter-rouge&quot;&gt;inline-block&lt;/code&gt; :&lt;/h3&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;With &lt;code class=&quot;highlighter-rouge&quot;&gt;inline-block&lt;/code&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;It allows you to vertically align elements&lt;/li&gt;
-      &lt;li&gt;Each &lt;code class=&quot;highlighter-rouge&quot;&gt;.col&lt;/code&gt; goes to a new line no matter the heights of previous columns&lt;/li&gt;
-      &lt;li&gt;Because of the whitespace, &lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt; is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; in the parent element&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;With &lt;code class=&quot;highlighter-rouge&quot;&gt;floats&lt;/code&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;Each row of columns needs to be wrap within a &lt;code class=&quot;highlighter-rouge&quot;&gt;row&lt;/code&gt; element :&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;It allows you to vertically align elements&lt;/li&gt;
+  &lt;li&gt;Each &lt;code class=&quot;highlighter-rouge&quot;&gt;.col&lt;/code&gt; goes to a new line no matter the heights of previous columns&lt;/li&gt;
+  &lt;li&gt;Because of the whitespace, &lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt; is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; in the parent element&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;with-floats-&quot;&gt;With &lt;code class=&quot;highlighter-rouge&quot;&gt;floats&lt;/code&gt; :&lt;/h3&gt;
+
+&lt;p&gt;Each row of columns needs to be wrap within a &lt;code class=&quot;highlighter-rouge&quot;&gt;row&lt;/code&gt; element :&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6 small-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
@@ -339,7 +335,7 @@
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Soon a &lt;a href=&quot;http://www.w3.org/TR/css-flexbox-1/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flexbox&lt;/code&gt;&lt;/a&gt; option will be available.&lt;/p&gt;
+&lt;!-- Soon a [```flexbox```](http://www.w3.org/TR/css-flexbox-1/) option will be available. --&gt;
 
 &lt;h2 id=&quot;if-small-is-true&quot;&gt;If &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/h2&gt;
 
@@ -374,13 +370,15 @@
 
 &lt;h2 id=&quot;how-to-use&quot;&gt;How to use&lt;/h2&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Components are located in the folder : &lt;code class=&quot;highlighter-rouge&quot;&gt;src/partials/&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@import&lt;/code&gt; the component in your main SASS file (usually &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt;)&lt;/li&gt;
+&lt;ol&gt;
+  &lt;li&gt;Checks components located in &lt;code class=&quot;highlighter-rouge&quot;&gt;src/partials/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Import the one you need in your main SASS file (usually &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt;)
+&lt;br /&gt;    ex : &lt;code class=&quot;highlighter-rouge&quot;&gt;@import &#39;partials/components/css117-component-grid&#39;;&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Copy its variables (or just the one you need) in your project and remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;!default&lt;/code&gt; flag&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;For every components, each variables are gathered in a SASS map :&lt;/p&gt;
+&lt;!-- For every components, each variables are gathered in a SASS map :
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$css117-grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;nb-of-columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
@@ -388,16 +386,17 @@
     &lt;span class=&quot;n&quot;&gt;gutter-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+ --&gt;
 
 &lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
 
 &lt;p&gt;To install the &lt;a href=&quot;grid.html&quot;&gt;grid&lt;/a&gt; :&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Copy and import in your project : &lt;code class=&quot;highlighter-rouge&quot;&gt;src/partials/components/grid.scss&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Copy and import in your project &lt;code class=&quot;highlighter-rouge&quot;&gt;css117-component-grid.scss&lt;/code&gt; :&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;partials/components/grid&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;partials/components/css117-component-grid&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Copy its variables in your project and remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;!default&lt;/code&gt; flag&lt;/li&gt;
@@ -423,7 +422,7 @@
 	&lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;           &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;That’s all. Next step, see how to &lt;a href=&quot;grid.html&quot;&gt;set up your html&lt;/a&gt; to use the grid.&lt;/p&gt;
+&lt;p&gt;That’s all. Next step, see how to &lt;a href=&quot;grid.html#set-up-your-html&quot;&gt;set up your html&lt;/a&gt; to use the grid.&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 28 Oct 2015 00:00:00 +0100</pubDate>
