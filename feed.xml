@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Apr 2016 23:10:59 +0200</pubDate>
-    <lastBuildDate>Sat, 30 Apr 2016 23:10:59 +0200</lastBuildDate>
+    <pubDate>Sat, 30 Apr 2016 23:54:18 +0200</pubDate>
+    <lastBuildDate>Sat, 30 Apr 2016 23:54:18 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -214,7 +214,7 @@
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;offset-class&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;boolean&lt;/td&gt;
-      &lt;td&gt;Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; if you need &lt;a href=&quot;&quot;&gt;offset classes&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; if you need &lt;a href=&quot;#offset-classes&quot;&gt;offset classes&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;offset-class-name&lt;/code&gt;&lt;/td&gt;
@@ -226,7 +226,7 @@
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;visibility-class&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;boolean&lt;/td&gt;
-      &lt;td&gt;Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; if you need &lt;a href=&quot;&quot;&gt;visibility classes&lt;/a&gt; that let you show or hide columns based on screen size. It creates a &lt;code class=&quot;highlighter-rouge&quot;&gt;-hidden&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;-visible&lt;/code&gt; classes. For instance : &lt;code class=&quot;highlighter-rouge&quot;&gt;large-hidden&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;medium-visible&lt;/code&gt;, …&lt;/td&gt;
+      &lt;td&gt;Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; if you need &lt;a href=&quot;#visibility-classes&quot;&gt;visibility classes&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;&lt;/td&gt;
