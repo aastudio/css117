@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Apr 2016 23:54:18 +0200</pubDate>
-    <lastBuildDate>Sat, 30 Apr 2016 23:54:18 +0200</lastBuildDate>
+    <pubDate>Sun, 01 May 2016 00:01:33 +0200</pubDate>
+    <lastBuildDate>Sun, 01 May 2016 00:01:33 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -160,7 +160,7 @@
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-margin-top&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;pixels&lt;/td&gt;
-      &lt;td&gt;Define the margin bottom of the grid&lt;/td&gt;
+      &lt;td&gt;Define the margin top of the grid&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-margin-bottom&lt;/code&gt;&lt;/td&gt;
@@ -178,7 +178,7 @@
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-margin-top&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;pixels&lt;/td&gt;
-      &lt;td&gt;Define the margin bottom of columns&lt;/td&gt;
+      &lt;td&gt;Define the margin top of columns&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-margin-bottom&lt;/code&gt;&lt;/td&gt;
