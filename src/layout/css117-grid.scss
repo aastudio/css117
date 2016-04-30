@@ -1,0 +1,225 @@
+//------------------------------------
+//  THE GRID
+//------------------------------------
+
+// Variables
+// ----------------------------------------
+
+$css117-grid-settings: (
+	grid-class-name:	'grid',
+	cols-class-name:	'cols',
+	col-class-name: 	'col',
+	
+	nb-of-columns:		12,
+
+	max-width:			1000px,
+	gutter-width:		20px,
+
+	grid-margin-top:	0,
+	grid-margin-bottom: 30px,
+	grid-padding:		0,
+	
+	col-margin-top:		0,
+	col-margin-bottom:  30px,
+	col-padding: 		20px,
+	col-font-size:		1rem,
+
+	centered: 		 	false,
+	
+	full-width-on-small:false,
+
+	offset-class:		false,
+	offset-class-name:	'offset',
+
+	visibility-class:	false,
+
+	dev: 			 	false,
+	debug: 			 	false
+) !default;
+
+$css117-grid-breakpoints: (
+    medium:     800px,
+   	small:      500px
+) !default;
+
+
+
+// ====================================================================
+// /!\ Do not modify from here
+// ====================================================================
+
+// ====================================================================
+// FUNCTIONS
+// ====================================================================
+
+$em-base: 16 !default;
+
+// Strips the unit from a number.
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_strip-units.scss
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+
+// Convert pixels to rems
+// eg. for a relational value of 12px write rem(12)
+// Assumes $em-base is the font-size of <html>
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_px-to-rem.scss
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  @if not unitless($em-base) {
+    $em-base: strip-units($em-base);
+  }
+  @return ($pxval / $em-base) * 1rem;
+}
+
+
+// ====================================================================
+// MEDIA QUERIES
+// ====================================================================
+
+@mixin mq-grid($query){
+    @each $breakpoint-name, $size in $css117-grid-breakpoints {
+        @if $query == $size {
+            @if (unitless($size)) or (unit($size) == 'px') {
+                @media (max-width: rem($size)) { @content; }
+            }
+            @else if (unit($size) == 'em') or (unit($size) == 'rem') {
+                @media (max-width: $size) { @content; }
+            }
+        }
+    }
+}
+
+// ====================================================================
+// GRID
+// ====================================================================
+
+// Core variables
+// -----------------------------------
+
+// Get the nb of columns from the map (default 12)
+$css117-colNb:			map-get($css117-grid-settings, nb-of-columns);
+$css117-gutterPerc:		strip-units( map-get($css117-grid-settings, gutter-width) ) / strip-units( map-get($css117-grid-settings, max-width) ) * 100%;
+$css117-col-marginLeft: strip-units( map-get($css117-grid-settings, gutter-width) ) / strip-units( map-get($css117-grid-settings, max-width) + map-get($css117-grid-settings, gutter-width) ) * 100%;
+
+
+// Create two classes : .cols & .col
+// -----------------------------------
+
+// Wrap the grid
+.#{map-get($css117-grid-settings, grid-class-name)} {
+	max-width: map-get($css117-grid-settings, max-width);
+	box-sizing: border-box;
+
+	margin-top: map-get($css117-grid-settings, grid-margin-top);
+	margin-bottom: map-get($css117-grid-settings, grid-margin-bottom);
+
+	padding: map-get($css117-grid-settings, grid-padding);
+
+	@if map-get($css117-grid-settings, centered) {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	font-size: 0;
+
+	/* if dev: true */
+	@if map-get($css117-grid-settings, dev) { transition: 250ms cubic-bezier(0.42,0,0.58,1); }
+}
+
+	.#{map-get($css117-grid-settings, cols-class-name)} { margin-left: $css117-gutterPerc * -1; }
+
+		.#{map-get($css117-grid-settings, col-class-name)} {
+			box-sizing: border-box;
+			display: inline-block;
+			vertical-align: top;
+			font-size: map-get($css117-grid-settings, col-font-size);
+			margin-top: map-get($css117-grid-settings, col-margin-top);
+			margin-bottom: map-get($css117-grid-settings, col-margin-bottom);
+			margin-left: map-get($css117-grid-settings, gutter-width) / ( map-get($css117-grid-settings, max-width) + map-get($css117-grid-settings, gutter-width) ) * 100%;
+
+			padding: map-get($css117-grid-settings, col-padding);
+
+			img { max-width: 100%; }
+
+			/* if dev: true */
+			@if map-get($css117-grid-settings, dev) {
+				transition: 250ms cubic-bezier(0.42,0,0.58,1);
+				border-left: 1px rgba(0,0,255,0.8) solid !important;
+				border-right: 1px rgba(0,0,255,0.8) solid !important;
+				background-color: rgba(255,0,0,0.1) !important;
+			}
+		}
+
+
+
+// Function that will loop $css117-colNb times
+// -----------------------------------
+
+// Calculate the width of a column in percentage
+@function mq-loop($i){
+	@return ( ( $i / $css117-colNb ) * 100% ) - $css117-col-marginLeft;
+}
+
+// Apply mq-loop to each column size from 1 to $css117-colNb
+@mixin grid-math($breakpoint-name) {
+
+	@if $breakpoint-name == 'small' and map-get($css117-grid-settings, full-width-on-small) {
+		.col { width: mq-loop($css117-colNb); }
+	}
+
+	@else {
+		@for $i from 1 to $css117-colNb {
+			.#{$breakpoint-name}-#{$i} { width: mq-loop($i); }
+		}
+		.#{$breakpoint-name}-#{$css117-colNb} { width: mq-loop($css117-colNb); }
+	}
+
+
+	// Create offset classes
+	@if map-get($css117-grid-settings, offset-class) {
+		@for $i from 1 to $css117-colNb {
+			.#{$breakpoint-name}-#{map-get($css117-grid-settings, offset-class-name)}-#{$i} { margin-left: mq-loop($i) + 2 * $css117-col-marginLeft; }
+		}
+		.#{$breakpoint-name}-no-#{map-get($css117-grid-settings, offset-class-name)} { margin-left: $css117-col-marginLeft; }
+	}
+
+
+	// Some helpers
+	@if map-get($css117-grid-settings, visibility-class) {
+		.#{$breakpoint-name}-hidden  { display: none; }
+		.#{$breakpoint-name}-visible { display: inline-block; }
+	}
+}
+
+
+
+
+// Display sizes for each breakpoint
+// -------------------------------------
+
+// 01. Display general values; by default 'large'
+@include grid-math('large');
+
+// 02. Display values for each breakpoints
+@each $breakpoint-name, $size in $css117-grid-breakpoints {
+	@include mq-grid($size) {
+		@include grid-math($breakpoint-name);
+	}
+}
+
+
+
+
+// Debug
+// -----------------------------------
+
+@if map-get($css117-grid-settings, debug) {
+	@debug "\a\aGrid:\a- width: #{map-get($css117-grid-settings, max-width)}\a- gutter-width: #{map-get($css117-grid-settings, gutter-width)}\a- grid-padding: #{map-get($css117-grid-settings, grid-padding)}\a- col-padding: #{map-get($css117-grid-settings, col-padding)}\a- nb-of-columns: #{map-get($css117-grid-settings, nb-of-columns)}\a\a- centered: #{map-get($css117-grid-settings, centered)}\a- small: #{map-get($css117-grid-settings, full-width-on-small)}\a- offset: #{map-get($css117-grid-settings, offset-class)}\a- visibility: #{map-get($css117-grid-settings, visibility-class)}\a\a- $css117-gutterPerc: #{$css117-gutterPerc}\a- dev: #{map-get($css117-grid-settings, dev)}\a- debug: #{map-get($css117-grid-settings, debug)}\a";
+}
+
+
