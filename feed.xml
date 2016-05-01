@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 May 2016 00:01:33 +0200</pubDate>
-    <lastBuildDate>Sun, 01 May 2016 00:01:33 +0200</lastBuildDate>
+    <pubDate>Sun, 01 May 2016 11:48:58 +0200</pubDate>
+    <lastBuildDate>Sun, 01 May 2016 11:48:58 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -58,14 +58,14 @@
     &lt;span class=&quot;n&quot;&gt;col-padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;col-font-size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;1rem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
 
-    &lt;span class=&quot;n&quot;&gt;centered&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;           &lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;centered&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;           &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
     
-    &lt;span class=&quot;n&quot;&gt;full-width-on-small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;full-width-on-small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
 
-    &lt;span class=&quot;n&quot;&gt;offset-class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;       &lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;offset-class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;       &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;offset-class-name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s1&quot;&gt;&#39;offset&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
 
-    &lt;span class=&quot;n&quot;&gt;visibility-class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;visibility-class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;                &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;
@@ -275,8 +275,8 @@
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 large-offset-2 medium-no-offset medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 large-offset-2 medium-no-offset medium-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-offset-5 medium-7 small-no-offset&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
         ...
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
@@ -286,8 +286,8 @@
     &lt;div class=&quot;grid&quot;&gt;
         &lt;div class=&quot;cols&quot;&gt;
             &lt;div class=&quot;col large-12&quot;&gt; large-12 &lt;/div&gt;
-            &lt;div class=&quot;col large-4 large-offset-2 medium-no-offset medium-6&quot;&gt; large-4&lt;br /&gt;large-offset-2&lt;br /&gt;medium-no-offset&lt;br /&gt;medium-6 &lt;/div&gt;
-            &lt;div class=&quot;col large-6 medium-6&quot;&gt; large-6 medium-6 &lt;/div&gt;
+            &lt;div class=&quot;col large-4 large-offset-2 medium-no-offset medium-12&quot; style=&quot;background-color:#52707E; color:#fff;&quot;&gt; large-4&lt;br /&gt;large-offset-2&lt;br /&gt;medium-no-offset&lt;br /&gt;medium-6 &lt;/div&gt;
+            &lt;div class=&quot;col large-6 medium-offset-5 medium-7 small-no-offset&quot; style=&quot;background-color:#BFDBC6;&quot;&gt; large-6 medium-offset-5 medium-7 small-no-offset &lt;/div&gt;
             &lt;div class=&quot;col large-12&quot;&gt; large-12 &lt;/div&gt;
             ...
         &lt;/div&gt;
