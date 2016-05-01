@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 May 2016 16:25:38 +0200</pubDate>
-    <lastBuildDate>Sun, 01 May 2016 16:25:38 +0200</lastBuildDate>
+    <pubDate>Sun, 01 May 2016 16:32:09 +0200</pubDate>
+    <lastBuildDate>Sun, 01 May 2016 16:32:09 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -31,7 +31,7 @@
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Download via bower (&lt;code class=&quot;highlighter-rouge&quot;&gt;bower install css117&lt;/code&gt;) or from the Github repo (&lt;a href=&quot;https://github.com/aastudio/css117/archive/master.zip&quot;&gt;master.zip&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Download via bower (&lt;code class=&quot;highlighter-rouge&quot;&gt;bower i css117&lt;/code&gt;) or from the Github repo (&lt;a href=&quot;https://github.com/aastudio/css117/archive/master.zip&quot;&gt;master.zip&lt;/a&gt;)&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@import&lt;/code&gt; in your main &lt;code class=&quot;highlighter-rouge&quot;&gt;.scss&lt;/code&gt; file the partials &lt;code class=&quot;highlighter-rouge&quot;&gt;css117-grid.scss&lt;/code&gt; (located in &lt;code class=&quot;highlighter-rouge&quot;&gt;src/layout/&lt;/code&gt;)&lt;/li&gt;
   &lt;li&gt;From it, copy from its two maps (&lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-settings&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-breakpoints&lt;/code&gt;) in your project before the &lt;code class=&quot;highlighter-rouge&quot;&gt;@import&lt;/code&gt; and remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;!default&lt;/code&gt; flag&lt;/li&gt;
 &lt;/ol&gt;
@@ -296,7 +296,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;It is written &lt;code class=&quot;highlighter-rouge&quot;&gt;BREAKPOINT-offset-NUMBER&lt;/code&gt;. Example : &lt;code class=&quot;highlighter-rouge&quot;&gt;large-offset-2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;medium-offset-7&lt;/code&gt;, etc.&lt;/li&gt;
-  &lt;li&gt;It comes also no-offset classes : &lt;code class=&quot;highlighter-rouge&quot;&gt;medium-no-offset&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;small-no-offset&lt;/code&gt;, etc.&lt;/li&gt;
+  &lt;li&gt;It comes also some no-offset classes : &lt;code class=&quot;highlighter-rouge&quot;&gt;medium-no-offset&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;small-no-offset&lt;/code&gt;, etc.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;visibility-classes&quot;&gt;Visibility classes&lt;/h2&gt;
