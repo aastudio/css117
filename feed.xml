@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 May 2016 16:50:19 +0200</pubDate>
-    <lastBuildDate>Sun, 01 May 2016 16:50:19 +0200</lastBuildDate>
+    <pubDate>Sun, 01 May 2016 21:43:27 +0200</pubDate>
+    <lastBuildDate>Sun, 01 May 2016 21:43:27 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -32,11 +32,9 @@
 
 &lt;ol&gt;
   &lt;li&gt;Download via bower (&lt;code class=&quot;highlighter-rouge&quot;&gt;bower i css117&lt;/code&gt;) or from the Github repo (&lt;a href=&quot;https://github.com/aastudio/css117/archive/master.zip&quot;&gt;master.zip&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@import&lt;/code&gt; in your main &lt;code class=&quot;highlighter-rouge&quot;&gt;.scss&lt;/code&gt; file the partials &lt;code class=&quot;highlighter-rouge&quot;&gt;css117-grid.scss&lt;/code&gt; (located in &lt;code class=&quot;highlighter-rouge&quot;&gt;src/layout/&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;From it, copy from its two maps (&lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-settings&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-breakpoints&lt;/code&gt;) in your project before the &lt;code class=&quot;highlighter-rouge&quot;&gt;@import&lt;/code&gt; and remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;!default&lt;/code&gt; flag&lt;/li&gt;
+  &lt;li&gt;In your main &lt;code class=&quot;highlighter-rouge&quot;&gt;.scss&lt;/code&gt; file, import the file &lt;code class=&quot;highlighter-rouge&quot;&gt;css117-grid.scss&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;From it, copy its two maps (&lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-settings&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-breakpoints&lt;/code&gt;) in your project before the &lt;code class=&quot;highlighter-rouge&quot;&gt;@import&lt;/code&gt; and remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;!default&lt;/code&gt; flag&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h3 id=&quot;example-&quot;&gt;Example :&lt;/h3&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Variables
 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$css117-grid-settings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
@@ -172,7 +170,7 @@
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-padding&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;pixels&lt;/td&gt;
-      &lt;td&gt;Define the padding of the grid (can be this way : &lt;code class=&quot;highlighter-rouge&quot;&gt;30px 10px 0 5px&lt;/code&gt;)&lt;/td&gt;
+      &lt;td&gt;Define the padding of the grid (can be : &lt;code class=&quot;highlighter-rouge&quot;&gt;30px 10px 0 5px&lt;/code&gt;)&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-margin-top&lt;/code&gt;&lt;/td&gt;
@@ -220,7 +218,7 @@
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;offset-class-name&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;offset&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;string&lt;/td&gt;
-      &lt;td&gt;Customize name of offset classes. Works if &lt;code class=&quot;highlighter-rouge&quot;&gt;offset&lt;/code&gt; is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Customize name of offset classes. Works if &lt;code class=&quot;highlighter-rouge&quot;&gt;offset-class&lt;/code&gt; is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;visibility-class&lt;/code&gt;&lt;/td&gt;
@@ -232,22 +230,22 @@
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;boolean&lt;/td&gt;
-      &lt;td&gt;If set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, it adds a pink transparent background-color behind elements and blue sides border to each columns&lt;/td&gt;
+      &lt;td&gt;If set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, it adds a pink background and blue sides borders to each columns. Useful when developing&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;debug&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;boolean&lt;/td&gt;
-      &lt;td&gt;If set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, it send debugging information to the ‘Terminal’&lt;/td&gt;
+      &lt;td&gt;If set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, it send debugging informations to the ‘Terminal’&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
 &lt;h2 id=&quot;fullwidth-on-small-breakpoints&quot;&gt;Fullwidth on small breakpoints&lt;/h2&gt;
 
-&lt;p&gt;By default on the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; breakpoint, each column of has different size, but in actual use, you probably want to set a unique fullwidth.&lt;/p&gt;
+&lt;p&gt;By default, each column, on the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; breakpoint, of has different size, but in actual use, you probably want to set a unique fullwidth.&lt;/p&gt;
 
-&lt;p&gt;Then you don’t need the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; class on your markup :&lt;/p&gt;
+&lt;p&gt;If set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, you don’t need the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; class on your markup :&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
