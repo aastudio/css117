@@ -1,4 +1,4 @@
-# CSS117
+# CSS117 Grid
 
 A lightweight (~ 1Ko minified), minimalist and highly customizable SASS grid.
 
