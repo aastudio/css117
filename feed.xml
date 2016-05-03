@@ -6,24 +6,42 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 May 2016 07:41:04 +0200</pubDate>
-    <lastBuildDate>Mon, 02 May 2016 07:41:04 +0200</lastBuildDate>
+    <pubDate>Tue, 03 May 2016 15:48:25 +0200</pubDate>
+    <lastBuildDate>Tue, 03 May 2016 15:48:25 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>Responsive Grid</title>
         <description>&lt;h2 id=&quot;presentation&quot;&gt;Presentation&lt;/h2&gt;
 
-&lt;p&gt;CSS117 is a very smart and flexible grid where you don’t need to wrap individual rows nor to tag last columns with classes. It is highly customizable through &lt;a href=&quot;#customize-variables&quot;&gt;variables&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CSS117 is a very smart and flexible grid.&lt;/p&gt;
 
-&lt;p&gt;In the following example, one row become two rows in the &lt;code class=&quot;highlighter-rouge&quot;&gt;medium&lt;/code&gt; breakpoint:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;No need to wrap individual rows&lt;/li&gt;
+  &lt;li&gt;No need to tag last columns with classes&lt;/li&gt;
+  &lt;li&gt;Highly customizable through &lt;a href=&quot;#customize-variables&quot;&gt;variables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-3 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-3 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-hidden small-visible&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-12 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div class=&quot;doc&quot;&gt;
     &lt;div class=&quot;grid&quot;&gt;
         &lt;div class=&quot;cols&quot;&gt;
-            &lt;div class=&quot;col large-4 medium-12&quot;&gt; large-4 &lt;strong&gt;medium-12&lt;/strong&gt; &lt;/div&gt;
-            &lt;div class=&quot;col large-4 medium-6&quot;&gt; large-4 &lt;strong&gt;medium-6&lt;/strong&gt; &lt;/div&gt;
-            &lt;div class=&quot;col large-4 medium-6&quot;&gt; large-4 &lt;strong&gt;medium-6&lt;/strong&gt; &lt;/div&gt;
+            &lt;div class=&quot;col large-3 medium-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;1&lt;/span&gt;&lt;br /&gt;large-3&lt;br /&gt;medium-6 &lt;/div&gt;
+            &lt;div class=&quot;col large-3 medium-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;2&lt;/span&gt;&lt;br /&gt;large-3&lt;br /&gt;medium-6 &lt;/div&gt;
+            &lt;div class=&quot;col large-6 medium-hidden small-visible&quot;&gt; &lt;span class=&quot;increment&quot;&gt;3&lt;/span&gt;&lt;br /&gt;large-6&lt;br /&gt;medium-hidden small-visible &lt;/div&gt;
+            &lt;div class=&quot;col large-12 medium-4&quot;&gt; &lt;span class=&quot;increment&quot;&gt;4&lt;/span&gt;&lt;br /&gt;large-12&lt;br /&gt;medium-4 &lt;/div&gt;
+            &lt;div class=&quot;col large-6 medium-8&quot;&gt; &lt;span class=&quot;increment&quot;&gt;5&lt;/span&gt;&lt;br /&gt;large-6&lt;br /&gt;medium-8 &lt;/div&gt;
+            &lt;div class=&quot;col large-6 medium-12&quot;&gt; &lt;span class=&quot;increment&quot;&gt;6&lt;/span&gt;&lt;br /&gt;large-6&lt;br /&gt;medium-12 &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
