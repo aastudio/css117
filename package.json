@@ -1,0 +1,25 @@
+{
+  "name": "css117",
+  "version": "1.0.0",
+  "description": "A lightweight (~ 1Ko minified), minimalist and highly customizable SASS grid.",
+  "main": "css117-grid.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aastudio/CSS117.git"
+  },
+  "keywords": [
+    "sass",
+    "grid",
+    "responsive",
+    "minimalist"
+  ],
+  "author": "aastudio <aurelien@aastudio.fr> (http://aastudio.fr)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aastudio/CSS117/issues"
+  },
+  "homepage": "https://github.com/aastudio/CSS117#readme"
+}
