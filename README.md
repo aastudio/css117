@@ -7,10 +7,6 @@ A lightweight (~ 1Ko minified), minimalist and highly customizable SASS grid.
 Documentation : http://css117.io
 
 
-## TODO
-
-- create a npm package
-
 ## Contributing
 
 1. Fork it
