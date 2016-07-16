@@ -2,7 +2,7 @@
   "name": "css117",
   "version": "1.0.0",
   "description": "A lightweight (~ 1Ko minified), minimalist and highly customizable SASS grid.",
-  "main": "css117-grid.scss",
+  "main": "src/layout/css117-grid.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
