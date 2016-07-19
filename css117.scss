@@ -129,7 +129,10 @@ $css117-col-marginLeft: strip-units( map-get($css117-grid-settings, gutter-width
 	@if map-get($css117-grid-settings, dev) { transition: 250ms cubic-bezier(0.42,0,0.58,1); }
 }
 
-	.#{map-get($css117-grid-settings, cols-class-name)} { margin-left: $css117-gutterPerc * -1; }
+	.#{map-get($css117-grid-settings, cols-class-name)} { 
+		font-size: 0;
+		margin-left: $css117-gutterPerc * -1; 
+	}
 
 		.#{map-get($css117-grid-settings, col-class-name)} {
 			box-sizing: border-box;
@@ -141,8 +144,6 @@ $css117-col-marginLeft: strip-units( map-get($css117-grid-settings, gutter-width
 			margin-left: map-get($css117-grid-settings, gutter-width) / ( map-get($css117-grid-settings, max-width) + map-get($css117-grid-settings, gutter-width) ) * 100%;
 
 			padding: map-get($css117-grid-settings, col-padding);
-
-			font-size: 0;
 
 			img { max-width: 100%; }
 
