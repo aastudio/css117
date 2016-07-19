@@ -37,7 +37,7 @@ $css117-grid-settings: (
 	debug: 			 	false
 ) !default;
 
-$css117-grid-breakpoints: (
+$css117-breakpoints: (
     medium:     800px,
    	small:      500px
 ) !default;
@@ -82,7 +82,7 @@ $em-base: 16 !default;
 // ====================================================================
 
 @mixin mq-grid($query){
-    @each $breakpoint-name, $size in $css117-grid-breakpoints {
+    @each $breakpoint-name, $size in $css117-breakpoints {
         @if $query == $size {
             @if (unitless($size)) or (unit($size) == 'px') {
                 @media (max-width: rem($size)) { @content; }
@@ -206,7 +206,7 @@ $css117-col-marginLeft: strip-units( map-get($css117-grid-settings, gutter-width
 @include grid-math('large');
 
 // 02. Display values for each breakpoints
-@each $breakpoint-name, $size in $css117-grid-breakpoints {
+@each $breakpoint-name, $size in $css117-breakpoints {
 	@include mq-grid($size) {
 		@include grid-math($breakpoint-name);
 	}
