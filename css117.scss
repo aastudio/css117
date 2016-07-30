@@ -141,7 +141,7 @@ $css117-col-marginLeft: strip-units( map-get($css117-grid-settings, gutter-width
 			font-size: map-get($css117-grid-settings, col-font-size);
 			margin-top: map-get($css117-grid-settings, col-margin-top);
 			margin-bottom: map-get($css117-grid-settings, col-margin-bottom);
-			margin-left: map-get($css117-grid-settings, gutter-width) / ( map-get($css117-grid-settings, max-width) + map-get($css117-grid-settings, gutter-width) ) * 100%;
+			margin-left: $css117-col-marginLeft;
 
 			padding: map-get($css117-grid-settings, col-padding);
 
