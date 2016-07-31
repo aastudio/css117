@@ -103,8 +103,8 @@ $em-base: 16 !default;
 
 // Get the nb of columns from the map (default 12)
 $css117-colNb:			map-get($css117-grid-settings, nb-of-columns);
-$css117-gutterPerc:		strip-units( map-get($css117-grid-settings, gutter-width) ) / strip-units( map-get($css117-grid-settings, max-width) ) * 100%;
-$css117-col-marginLeft: strip-units( map-get($css117-grid-settings, gutter-width) ) / strip-units( map-get($css117-grid-settings, max-width) + map-get($css117-grid-settings, gutter-width) ) * 100%;
+$css117-gutterPerc:		map-get($css117-grid-settings, gutter-width) / map-get($css117-grid-settings, max-width) * 100%;
+$css117-col-marginLeft: map-get($css117-grid-settings, gutter-width) / ( map-get($css117-grid-settings, max-width) + map-get($css117-grid-settings, gutter-width) ) * 100%;
 
 
 // Create two classes : .cols & .col
