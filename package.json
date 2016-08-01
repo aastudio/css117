@@ -1,6 +1,6 @@
 {
   "name": "css117",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A lightweight (~ 1Ko minified), minimalist and highly customizable SASS grid",
   "main": "css117.scss",
   "style": "css117.scss",

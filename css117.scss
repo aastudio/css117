@@ -5,36 +5,79 @@
 // Variables
 // ----------------------------------------
 
-$css117-grid-settings: (
-	grid-class-name:	'grid',
-	cols-class-name:	'cols',
-	col-class-name: 	'col',
+$css117-settings: (
+
+	// Classes name
+	// -----------------------------------
+	grid-class-name:	  	'grid',
+	cols-class-name:	  	'cols',
+	col-class-name: 	  	'col',
+
+
+	// Breakpoints
+	// -----------------------------------
+	largest-breakpoint:   	'large',
+	full-width-on-small:  	true,
+
 	
-	nb-of-columns:		12,
+	// Grid dimensions
+	// -----------------------------------
+	max-width:			  	1000px,
+	gutter-width:		  	20px,
 
-	max-width:			1000px,
-	gutter-width:		20px,
 
-	grid-margin-top:	0,
-	grid-margin-bottom: 30px,
-	grid-padding:		0,
+	// Columns settings
+	// -----------------------------------
 	
-	col-margin-top:		0,
-	col-margin-bottom:  30px,
-	col-padding: 		20px,
-	col-font-size:		1rem,
+	// Number of columns
+	nb-of-columns:		  	12,
+	columns-start-from:   	1,
 
-	centered: 		 	false,
+	// Nested grid ?
+	nested: 			  	false,
+	nested-start-from:    	2,
+
+	// or choose which columns ?
+	choose-columns:       	false,
+	which-columns: 		  	(4,5,6,7,8,12),
+
+	// choose which nested columns ?
+	choose-nested-columns:	false,
+	which-nested-columns: 	(4,5,6,7,8,12),
+
+
+	// Margins and paddings
+	// -----------------------------------
+	grid-margin-top:	  	0,
+	grid-margin-bottom:   	30px,
+	grid-padding:		  	0,
 	
-	full-width-on-small:false,
+	col-margin-top:		  	0,
+	col-margin-bottom:    	30px,
+	col-padding: 		  	20px,
+	col-font-size:		  	1rem,
 
-	offset-class:		false,
-	offset-class-name:	'offset',
 
-	visibility-class:	false,
+	// Center the grid ?
+	// -----------------------------------
+	centered: 		 	  	true,
+	
+	
+	// Offset Classes ?
+	// -----------------------------------
+	offset-class:		  	false,
+	offset-class-name:	  	'offset',
 
-	dev: 			 	false,
-	debug: 			 	false
+	
+	// Visibility Classes ?
+	// -----------------------------------
+	visibility-class:	  	false,
+	
+
+	// Production mode ?
+	// -----------------------------------
+	dev: 			 	  	false,
+	debug: 			 	  	false
 ) !default;
 
 $css117-breakpoints: (
@@ -81,14 +124,14 @@ $em-base: 16 !default;
 // MEDIA QUERIES
 // ====================================================================
 
-@mixin mq-grid($query){
-    @each $breakpoint-name, $size in $css117-breakpoints {
-        @if $query == $size {
-            @if (unitless($size)) or (unit($size) == 'px') {
-                @media (max-width: rem($size)) { @content; }
+@mixin mq-grid($css117-query){
+    @each $css117-breakpointName, $css117-size in $css117-breakpoints {
+        @if $css117-query == $css117-size {
+            @if (unitless($css117-size)) or (unit($css117-size) == 'px') {
+                @media (max-width: rem($css117-size)) { @content; }
             }
-            @else if (unit($size) == 'em') or (unit($size) == 'rem') {
-                @media (max-width: $size) { @content; }
+            @else if (unit($css117-size) == 'em') or (unit($css117-size) == 'rem') {
+                @media (max-width: $css117-size) { @content; }
             }
         }
     }
@@ -101,54 +144,68 @@ $em-base: 16 !default;
 // Core variables
 // -----------------------------------
 
-// Get the nb of columns from the map (default 12)
-$css117-colNb:			map-get($css117-grid-settings, nb-of-columns);
-$css117-gutterPerc:		map-get($css117-grid-settings, gutter-width) / map-get($css117-grid-settings, max-width) * 100%;
-$css117-col-marginLeft: map-get($css117-grid-settings, gutter-width) / ( map-get($css117-grid-settings, max-width) + map-get($css117-grid-settings, gutter-width) ) * 100%;
+// Set gutter and margins in percentage
 
+$css117-maxWidthUnitLess: strip-units(map-get($css117-settings, max-width)); // max-width without unit
+$css117-gutterUnitLess:	  strip-units(map-get($css117-settings, gutter-width)); // gutter without unit
+$css117-gutterPerc:		  $css117-gutterUnitLess / $css117-maxWidthUnitLess * 100%;
+$css117-totalWidth: 	  $css117-maxWidthUnitLess + $css117-gutterUnitLess;
+$css117-marginLeftCol:    $css117-gutterUnitLess / $css117-totalWidth * 100%;
+
+
+// Debug
+// -----------------------------------
+
+@if map-get($css117-settings, debug) {
+	@debug "\a\aGRID SETTINGS:\a- width: #{map-get($css117-settings, max-width)}\a- gutter-width: #{map-get($css117-settings, gutter-width)}\a- grid-padding: #{map-get($css117-settings, grid-padding)}\a- col-padding: #{map-get($css117-settings, col-padding)}\a- nb-of-columns: #{map-get($css117-settings, nb-of-columns)}\a";
+}
 
 // Create two classes : .cols & .col
 // -----------------------------------
 
 // Wrap the grid
-.#{map-get($css117-grid-settings, grid-class-name)} {
-	max-width: map-get($css117-grid-settings, max-width);
+.#{map-get($css117-settings, grid-class-name)} {
+	max-width: map-get($css117-settings, max-width);
 	box-sizing: border-box;
 
-	margin-top: map-get($css117-grid-settings, grid-margin-top);
-	margin-bottom: map-get($css117-grid-settings, grid-margin-bottom);
+	margin-top: map-get($css117-settings, grid-margin-top);
+	margin-bottom: map-get($css117-settings, grid-margin-bottom);
 
-	padding: map-get($css117-grid-settings, grid-padding);
+	padding: map-get($css117-settings, grid-padding);
 
-	@if map-get($css117-grid-settings, centered) {
+	@if map-get($css117-settings, centered) {
 		margin-right: auto;
 		margin-left: auto;
 	}
 
-	/* if dev: true */
-	@if map-get($css117-grid-settings, dev) { transition: 250ms cubic-bezier(0.42,0,0.58,1); }
+	// if dev: true
+	@if map-get($css117-settings, dev) { transition: 250ms cubic-bezier(0.42,0,0.58,1); }
 }
 
-	.#{map-get($css117-grid-settings, cols-class-name)} { 
+	.#{map-get($css117-settings, cols-class-name)} { 
 		font-size: 0;
 		margin-left: $css117-gutterPerc * -1; 
+
+		@if map-get($css117-settings, nested) {
+			& & { margin: map-get($css117-settings, col-padding) * -1; }
+		}
 	}
 
-		.#{map-get($css117-grid-settings, col-class-name)} {
+		.#{map-get($css117-settings, col-class-name)} {
 			box-sizing: border-box;
 			display: inline-block;
 			vertical-align: top;
-			font-size: map-get($css117-grid-settings, col-font-size);
-			margin-top: map-get($css117-grid-settings, col-margin-top);
-			margin-bottom: map-get($css117-grid-settings, col-margin-bottom);
-			margin-left: $css117-col-marginLeft;
+			font-size: map-get($css117-settings, col-font-size);
+			margin-top: map-get($css117-settings, col-margin-top);
+			margin-bottom: map-get($css117-settings, col-margin-bottom);
+			margin-left: $css117-gutterUnitLess / $css117-totalWidth * 100%;
 
-			padding: map-get($css117-grid-settings, col-padding);
+			padding: map-get($css117-settings, col-padding);
 
 			img { max-width: 100%; }
 
 			/* if dev: true */
-			@if map-get($css117-grid-settings, dev) {
+			@if map-get($css117-settings, dev) {
 				transition: 250ms cubic-bezier(0.42,0,0.58,1);
 				border-left: 1px rgba(0,0,255,0.8) solid !important;
 				border-right: 1px rgba(0,0,255,0.8) solid !important;
@@ -158,69 +215,136 @@ $css117-col-marginLeft: map-get($css117-grid-settings, gutter-width) / ( map-get
 
 
 
-// Function that will loop $css117-colNb times
-// -----------------------------------
-
-// Calculate the width of a column in percentage
-@function mq-loop($i){
-	@return ( ( $i / $css117-colNb ) * 100% ) - $css117-col-marginLeft;
+// mq-loop : Calculate the width of a column in percentage
+// -----------------------------------------------------
+@function mq-loop($css117-i){
+	@return ( ( $css117-i / map-get($css117-settings, nb-of-columns) ) * 100% ) - $css117-marginLeftCol;
 }
 
-// Apply mq-loop to each column size from 1 to $css117-colNb
-@mixin grid-math($breakpoint-name) {
 
-	@if $breakpoint-name == 'small' and map-get($css117-grid-settings, full-width-on-small) {
-		.col { width: mq-loop($css117-colNb); }
+
+// nested-math : Calculate the width and margin-left of nested columns
+// -------------------------------------------------------------------
+
+@mixin nested-columns-math($css117-j, $css117-arguments...) {
+	$css117-widthNested: ( $css117-j / map-get($css117-settings, nb-of-columns) * nth($css117-arguments, 2) - $css117-gutterUnitLess ) / nth($css117-arguments, 2) * 100%;
+	.#{nth($css117-arguments, 3)}-#{nth($css117-arguments, 1)} .#{nth($css117-arguments, 4)}-#{$css117-j} { 
+		margin-left: $css117-gutterUnitLess / nth($css117-arguments, 2) * 100%;
+		width: $css117-widthNested;
 	}
+}
 
-	@else {
-		@for $i from 1 to $css117-colNb {
-			.#{$breakpoint-name}-#{$i} { width: mq-loop($i); }
+@mixin nested-columns($css117-arguments...) {	
+	@if map-get($css117-settings, choose-nested-columns) {
+		@each $css117-j in map-get($css117-settings, which-nested-columns) {
+			@include nested-columns-math($css117-j, $css117-arguments...);
 		}
-		.#{$breakpoint-name}-#{$css117-colNb} { width: mq-loop($css117-colNb); }
+	} @else {
+		@for $css117-j from map-get($css117-settings, nested-start-from) to ( map-get($css117-settings, nb-of-columns) + 1 ) {
+			@include nested-columns-math($css117-j, $css117-arguments...);
+		}
+	}
+}
+
+@mixin columns-math($css117-i,$css117-breakpointName) {
+
+	// Generate a width for each columns
+	// -------------------------------------
+	.#{$css117-breakpointName}-#{$css117-i} { width: mq-loop($css117-i); }
+
+	// If nested is true
+	// -------------------------------------
+	@if map-get($css117-settings, nested) {
+
+		$css117-parentCols: $css117-i / map-get($css117-settings, nb-of-columns) * $css117-totalWidth;
+
+		// Define nested .cols margin-left (depends on the parent)
+		$css117-marginLeftNestedCols: $css117-gutterUnitLess / ( $css117-parentCols - $css117-gutterUnitLess - 2 * strip-units(map-get($css117-settings, col-padding)) ) * -100%;
+		.#{$css117-breakpointName}-#{$css117-i} .cols { margin-left: calc( #{$css117-marginLeftNestedCols} - #{map-get($css117-settings, col-padding)} ); }
+
+		// Set large nested columns
+		$css117-arguments: ($css117-i, $css117-parentCols, $css117-breakpointName, map-get($css117-settings, largest-breakpoint) );
+		@include nested-columns($css117-arguments...);
+
+		@each $css117-breakpointNameNested, $css117-size in $css117-breakpoints {
+			
+			$css117-arguments: ($css117-i, $css117-parentCols, $css117-breakpointName, $css117-breakpointNameNested );
+
+			// If breakpoin is large add mq
+			@if $css117-breakpointName == map-get($css117-settings, largest-breakpoint) {
+				@include mq-grid($css117-size) {		
+					@include nested-columns($css117-arguments...);
+				}
+			} @else {
+				@include nested-columns($css117-arguments...);
+			}
+		}
+	}
+}
+
+
+
+// grid-math : Apply mq-loop to each column size from 1 to map-get($css117-settings, nb-of-columns)
+// -----------------------------------------------------
+@mixin grid-math($css117-breakpointName) {
+
+	@if $css117-breakpointName == 'small' and map-get($css117-settings, full-width-on-small) {
+
+		.col { width: mq-loop(map-get($css117-settings, nb-of-columns)); }
+
+		@if map-get($css117-settings, nested) { 
+			.col { 
+				.cols { margin-left: map-get($css117-settings, col-padding) * -1; }
+				.col { 
+					width: 100%; 
+					margin-left: 0; 
+				} 
+			}
+		}
+
+	} @else {
+		// If choose columns
+		@if map-get($css117-settings, choose-columns) {
+			@each $css117-i in map-get($css117-settings, which-columns) {
+				@include columns-math($css117-i,$css117-breakpointName);
+			}
+
+		} @else {
+			@for $css117-i from map-get($css117-settings, columns-start-from) to ( map-get($css117-settings, nb-of-columns) + 1 ) {
+				@include columns-math($css117-i,$css117-breakpointName);
+			}
+
+
+		}
 	}
 
 
 	// Create offset classes
-	@if map-get($css117-grid-settings, offset-class) {
-		@for $i from 1 to $css117-colNb {
-			.#{$breakpoint-name}-#{map-get($css117-grid-settings, offset-class-name)}-#{$i} { margin-left: mq-loop($i) + 2 * $css117-col-marginLeft; }
+	@if map-get($css117-settings, offset-class) {
+		@for $css117-i from 1 to map-get($css117-settings, nb-of-columns) {
+			.#{$css117-breakpointName}-#{map-get($css117-settings, offset-class-name)}-#{$css117-i} { margin-left: mq-loop($css117-i) + 2 * $css117-marginLeftCol; }
 		}
-		.#{$breakpoint-name}-no-#{map-get($css117-grid-settings, offset-class-name)} { margin-left: $css117-col-marginLeft; }
+		.#{$css117-breakpointName}-no-#{map-get($css117-settings, offset-class-name)} { margin-left: $css117-marginLeftCol; }
 	}
 
 
 	// Some helpers
-	@if map-get($css117-grid-settings, visibility-class) {
-		.#{$breakpoint-name}-hidden  { display: none; }
-		.#{$breakpoint-name}-visible { display: inline-block; }
+	@if map-get($css117-settings, visibility-class) {
+		.#{$css117-breakpointName}-hidden  { display: none; }
+		.#{$css117-breakpointName}-visible { display: inline-block; }
 	}
 }
-
-
 
 
 // Display sizes for each breakpoint
 // -------------------------------------
 
 // 01. Display general values; by default 'large'
-@include grid-math('large');
+@include grid-math( map-get($css117-settings, largest-breakpoint) );
 
 // 02. Display values for each breakpoints
-@each $breakpoint-name, $size in $css117-breakpoints {
-	@include mq-grid($size) {
-		@include grid-math($breakpoint-name);
+@each $css117-breakpointName, $css117-size in $css117-breakpoints {
+	@include mq-grid($css117-size) {
+		@include grid-math($css117-breakpointName);
 	}
 }
-
-
-
-
-// Debug
-// -----------------------------------
-
-@if map-get($css117-grid-settings, debug) {
-	@debug "\a\aGrid:\a- width: #{map-get($css117-grid-settings, max-width)}\a- gutter-width: #{map-get($css117-grid-settings, gutter-width)}\a- grid-padding: #{map-get($css117-grid-settings, grid-padding)}\a- col-padding: #{map-get($css117-grid-settings, col-padding)}\a- nb-of-columns: #{map-get($css117-grid-settings, nb-of-columns)}\a\a- centered: #{map-get($css117-grid-settings, centered)}\a- small: #{map-get($css117-grid-settings, full-width-on-small)}\a- offset: #{map-get($css117-grid-settings, offset-class)}\a- visibility: #{map-get($css117-grid-settings, visibility-class)}\a\a- $css117-gutterPerc: #{$css117-gutterPerc}\a- dev: #{map-get($css117-grid-settings, dev)}\a- debug: #{map-get($css117-grid-settings, debug)}\a";
-}
-
-
