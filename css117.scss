@@ -32,16 +32,12 @@ $css117-settings: (
 	// Number of columns
 	nb-of-columns:		  	12,
 	columns-start-from:   	1,
+	choose-columns:       	false,
+	which-columns: 		  	(4,5,6,7,8,12),
 
 	// Nested grid ?
 	nested: 			  	false,
 	nested-start-from:    	2,
-
-	// or choose which columns ?
-	choose-columns:       	false,
-	which-columns: 		  	(4,5,6,7,8,12),
-
-	// choose which nested columns ?
 	choose-nested-columns:	false,
 	which-nested-columns: 	(4,5,6,7,8,12),
 
@@ -260,7 +256,7 @@ $css117-marginLeftCol:    $css117-gutterUnitLess / $css117-totalWidth * 100%;
 
 		// Define nested .cols margin-left (depends on the parent)
 		$css117-marginLeftNestedCols: $css117-gutterUnitLess / ( $css117-parentCols - $css117-gutterUnitLess - 2 * strip-units(map-get($css117-settings, col-padding)) ) * -100%;
-		.#{$css117-breakpointName}-#{$css117-i} .cols { margin-left: calc( #{$css117-marginLeftNestedCols} - #{map-get($css117-settings, col-padding)} ); }
+		.#{$css117-breakpointName}-#{$css117-i} .#{map-get($css117-settings, cols-class-name)} { margin-left: calc( #{$css117-marginLeftNestedCols} - #{map-get($css117-settings, col-padding)} ); }
 
 		// Set large nested columns
 		$css117-arguments: ($css117-i, $css117-parentCols, $css117-breakpointName, map-get($css117-settings, largest-breakpoint) );
@@ -290,12 +286,12 @@ $css117-marginLeftCol:    $css117-gutterUnitLess / $css117-totalWidth * 100%;
 
 	@if $css117-breakpointName == 'small' and map-get($css117-settings, full-width-on-small) {
 
-		.col { width: mq-loop(map-get($css117-settings, nb-of-columns)); }
+		.#{map-get($css117-settings, col-class-name)} { width: mq-loop(map-get($css117-settings, nb-of-columns)); }
 
 		@if map-get($css117-settings, nested) { 
-			.col { 
-				.cols { margin-left: map-get($css117-settings, col-padding) * -1; }
-				.col { 
+			.#{map-get($css117-settings, col-class-name)} { 
+				.#{map-get($css117-settings, cols-class-name)} { margin-left: map-get($css117-settings, col-padding) * -1; }
+				.#{map-get($css117-settings, col-class-name)} { 
 					width: 100%; 
 					margin-left: 0; 
 				} 
