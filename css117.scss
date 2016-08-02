@@ -53,6 +53,9 @@ $css117-settings: (
 	col-padding: 		  	20px,
 	col-font-size:		  	1rem,
 
+	// If nested
+	nested-cols-padding: 	0,
+
 
 	// Center the grid ?
 	// -----------------------------------
@@ -183,7 +186,10 @@ $css117-marginLeftCol:    $css117-gutterUnitLess / $css117-totalWidth * 100%;
 		margin-left: $css117-gutterPerc * -1; 
 
 		@if map-get($css117-settings, nested) {
-			& & { margin: map-get($css117-settings, col-padding) * -1; }
+			& & { 
+				margin: map-get($css117-settings, col-padding) * -1 map-get($css117-settings, col-padding) * -1 map-get($css117-settings, col-padding) * -2; 
+				padding: map-get($css117-settings, nested-cols-padding);
+			}
 		}
 	}
 
