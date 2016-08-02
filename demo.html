@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>CSS117 - Demo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300:600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400:600" rel="stylesheet">
 	<style>
 
 	/*
@@ -1249,14 +1249,14 @@
 	</style>
 	<style>
 		/* DEMO */
-		html { font: 300 110%/1.5 'Titillium Web', sans-serif; }
-		body { margin: 0; }
-		h1 { font-weight: 600; }
-		.wrapper { background-color: #eee; }
-		.col { background-color: rgba(0, 0, 0, 0.09); }
-		.col .col { font-size: 0.75rem; background-color: rgba(255, 99, 71, 0.7); }
-		span { display: inline-block; margin-right: 30px; }
-		span:last-child { margin-right: 0; }
+		html{font:100%/1.5 'Titillium Web',sans-serif}
+		body{margin:0}
+		h1{font-weight:600}
+		.wrapper{background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/pw_maze_white.png) #EBEBEB}
+		.col{border:1px solid #000}
+		.col .col{font-size:.75rem}
+		span{display:inline-block;margin-right:30px}
+		span:last-child{margin-right:0}
 	</style>
 </head>
 <body>
@@ -1270,36 +1270,36 @@
 	<main>
 		<div class="wrapper">
 			<div class="grid">
-				<div class="cols">
-					<div class="col largest-4 medium-6"><span>largest-4</span><span>medium-6</span></div>
-					<div class="col largest-4 medium-6"><span>largest-4</span><span>medium-6</span></div>
-					<div class="col largest-4 medium-6"><span>largest-4</span><span>medium-6</span></div>
-					<div class="col largest-6"><span>largest-6</span></div>
-					<div class="col largest-6 medium-12"><span>largest-6</span><span>medium-12</span></div>
-	 			</div>
-			</div>
-		</div>
-	
-		<div class="grid">
-			<div class="cols">
-				<div class="col largest-3 medium-6"><span>largest-3</span><span>medium-6</span></div>
-				<div class="col largest-3 medium-6"><span>largest-3</span><span>medium-6</span></div>
-				<div class="col largest-3 medium-hidden"><span>largest-3</span><span>medium-hidden</span></div>
-				<div class="col largest-3 medium-hidden"><span>largest-3</span><span>medium-hidden</span></div>
-				<div class="col largest-6">
 					<div class="cols">
-						<div class="col largest-4 medium-6"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
-						<div class="col largest-4 medium-6"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
-						<div class="col largest-4 medium-6"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
-						<div class="col largest-4 medium-6"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
-						<div class="col largest-4 medium-6"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
-						<div class="col largest-4 medium-6"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
+						<div class="col largest-4 medium-6"><span>largest-4</span><span>medium-6</span></div>
+						<div class="col largest-4 medium-6"><span>largest-4</span><span>medium-6</span></div>
+						<div class="col largest-4 medium-6"><span>largest-4</span><span>medium-6</span></div>
+						<div class="col largest-6"><span>largest-6</span></div>
+						<div class="col largest-6 medium-12"><span>largest-6</span><span>medium-12</span></div>
+		 	
+						<div class="col largest-3 medium-6"><span>largest-3</span><span>medium-6</span></div>
+						<div class="col largest-3 medium-6"><span>largest-3</span><span>medium-6</span></div>
+						<div class="col largest-3 medium-hidden"><span>largest-3</span><span>medium-hidden</span></div>
+						<div class="col largest-3 medium-hidden"><span>largest-3</span><span>medium-hidden</span></div>
+						<div class="col largest-6 medium-12">
+							<div class="cols">
+								<div class="col largest-4 medium-4"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
+								<div class="col largest-4 medium-4"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
+								<div class="col largest-4 medium-4"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
+								<div class="col largest-4 medium-6"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
+								<div class="col largest-4 medium-6"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
+								<div class="col largest-4 medium-6"><span>NESTED</span><span>largest-4</span><span>medium-6</span></div>
+							</div>
+						</div>
+						<div class="col largest-6 medium-12"><span>largest-6</span><span>medium-12</span>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus doloremque, eius perferendis dolorum consectetur quibusdam reiciendis at tempora ipsum fugit.</p>
+						</div>
 					</div>
 				</div>
-				<div class="col largest-6">largest-6
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus doloremque, eius perferendis dolorum consectetur quibusdam reiciendis at tempora ipsum fugit, odit rerum saepe esse quam optio ea natus. Natus, iure. lorem</p>
-				</div>
-				<div class="col largest-8 medium-hidden small-visible"><span>largest-8</span><span>medium-hidden</span><span>small-visible</span></div>
+			</div>
+			<div class="grid">
+				<div class="cols">
+					<div class="col largest-8 medium-hidden small-visible"><span>largest-8</span><span>medium-hidden</span><span>small-visible</span></div>
 				<div class="col largest-4 medium-12">largest-4 medium-12</div>
 				<div class="col largest-7">largest-7</div>
 				<div class="col largest-5">largest-5</div>
