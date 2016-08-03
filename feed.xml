@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Aug 2016 08:47:06 +0200</pubDate>
-    <lastBuildDate>Wed, 03 Aug 2016 08:47:06 +0200</lastBuildDate>
+    <pubDate>Wed, 03 Aug 2016 08:47:07 +0200</pubDate>
+    <lastBuildDate>Wed, 03 Aug 2016 08:47:07 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -163,7 +163,7 @@
 &lt;ul&gt;
   &lt;li&gt;The two wrappers, &lt;code class=&quot;highlighter-rouge&quot;&gt;.grid&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.cols&lt;/code&gt;, are mandatory (the secret sauce of the grid)&lt;/li&gt;
   &lt;li&gt;The classes &lt;code class=&quot;highlighter-rouge&quot;&gt;medium-&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;small-&lt;/code&gt; are created automatically from the map &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-breakpoints&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;The widest breakpoint is always called &lt;code class=&quot;highlighter-rouge&quot;&gt;large&lt;/code&gt; and the narrowest &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; (both are mandatory)&lt;/li&gt;
+  &lt;li&gt;The narrowest breakpoint is always called &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;You can add any other breakpoint between, directly in the map &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-breakpoints&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
