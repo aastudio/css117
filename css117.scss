@@ -17,7 +17,7 @@ $css117-settings: (
 	// Breakpoints
 	// -----------------------------------
 	largest-breakpoint:   	'large',
-	full-width-on-small:  	true,
+	full-width-on-smallest: true,
 
 	
 	// Grid dimensions
@@ -204,6 +204,8 @@ $css117-marginLeftCol:    $css117-gutterUnitLess / $css117-totalWidth * 100%;
 
 			padding: map-get($css117-settings, col-padding);
 
+			&.last { display: block; }
+
 			img { max-width: 100%; }
 
 			/* if dev: true */
@@ -290,7 +292,7 @@ $css117-marginLeftCol:    $css117-gutterUnitLess / $css117-totalWidth * 100%;
 // -----------------------------------------------------
 @mixin grid-math($css117-breakpointName) {
 
-	@if $css117-breakpointName == 'small' and map-get($css117-settings, full-width-on-small) {
+	@if $css117-breakpointName == 'small' and map-get($css117-settings, full-width-on-smallest) {
 
 		.#{map-get($css117-settings, col-class-name)} { width: mq-loop(map-get($css117-settings, nb-of-columns)); }
 
