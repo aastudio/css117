@@ -261,10 +261,17 @@ $css117-marginLeftCol:    $css117-gutterUnitLess / $css117-totalWidth * 100%;
 	@if map-get($css117-settings, nested) {
 
 		$css117-parentCols: $css117-i / map-get($css117-settings, nb-of-columns) * $css117-totalWidth;
+		
+		$css117-colPadding: map-get($css117-settings, col-padding);
 
+		// Because calc() doesn't accept '0' without unit
+		@if unitless(map-get($css117-settings, col-padding)) and map-get($css117-settings, col-padding) == 0 { 
+			$css117-colPadding: '0px';
+		}
+		
 		// Define nested .cols margin-left (depends on the parent)
 		$css117-marginLeftNestedCols: $css117-gutterUnitLess / ( $css117-parentCols - $css117-gutterUnitLess - 2 * strip-units(map-get($css117-settings, col-padding)) ) * -100%;
-		.#{$css117-breakpointName}-#{$css117-i} .#{map-get($css117-settings, cols-class-name)} { margin-left: calc( #{$css117-marginLeftNestedCols} - #{map-get($css117-settings, col-padding)} ); }
+		.#{$css117-breakpointName}-#{$css117-i} .#{map-get($css117-settings, cols-class-name)} { margin-left: calc( #{$css117-marginLeftNestedCols} - #{$css117-colPadding} ); }
 
 		// Set large nested columns
 		$css117-arguments: ($css117-i, $css117-parentCols, $css117-breakpointName, map-get($css117-settings, largest-breakpoint) );
