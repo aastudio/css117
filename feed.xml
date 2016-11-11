@@ -6,13 +6,13 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 11 Nov 2016 10:51:01 +0100</pubDate>
-    <lastBuildDate>Fri, 11 Nov 2016 10:51:01 +0100</lastBuildDate>
+    <pubDate>Fri, 11 Nov 2016 10:51:15 +0100</pubDate>
+    <lastBuildDate>Fri, 11 Nov 2016 10:51:15 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>Responsive Grid</title>
-        <description>&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;presentation&quot;&gt;Presentation&lt;/h2&gt;
 
 &lt;p&gt;CSS117 is a very smart and flexible grid.&lt;/p&gt;
 
