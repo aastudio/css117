@@ -208,8 +208,8 @@ $css117-marginLeftCol:    $css117-gutterUnitLess / $css117-totalWidth * 100%;
 
 			img { max-width: 100%; }
 
-			/* if dev: true */
 			@if map-get($css117-settings, dev) {
+				/* dev: true */
 				transition: 250ms cubic-bezier(0.42,0,0.58,1);
 				border-left: 1px rgba(0,0,255,0.8) solid !important;
 				border-right: 1px rgba(0,0,255,0.8) solid !important;
