@@ -1,6 +1,6 @@
 # Changes to CSS117
 
-### 1.2.0
+### 1.2.0 (June 10, 2017)
 
 * Remove bower support
 * Update comments in code
