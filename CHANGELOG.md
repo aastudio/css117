@@ -1,5 +1,9 @@
 # Changes to CSS117
 
+### 1.2.1 (June 25, 2017)
+
+* Lint css117.scss : Fix some spaces, tabs and name's variables.
+
 ### 1.2.0 (June 10, 2017)
 
 * Remove bower support
