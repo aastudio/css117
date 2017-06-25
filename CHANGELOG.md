@@ -11,7 +11,7 @@
 
 ### 1.1.7 (August 02, 2016)
 
-* Added : demo.html
+* Added : [demo.html](http://aastudio.github.io/css117/demo.html)
 
 ### 1.1.6 (August 01, 2016)
 
