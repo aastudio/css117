@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Jul 2017 15:04:41 +0200</pubDate>
-    <lastBuildDate>Sat, 01 Jul 2017 15:04:41 +0200</lastBuildDate>
+    <pubDate>Sat, 01 Jul 2017 15:32:48 +0200</pubDate>
+    <lastBuildDate>Sat, 01 Jul 2017 15:32:48 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -51,27 +51,21 @@
 
 &lt;h3 id=&quot;first-step--download-the-package&quot;&gt;First step : Download the package&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Webpack&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;webpack&quot;&gt;Webpack&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cli&quot; data-lang=&quot;cli&quot;&gt;npm i css117 --save-dev&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// And in your main SASS file
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;~css117&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;NPM&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;npm&quot;&gt;NPM&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cli&quot; data-lang=&quot;cli&quot;&gt;npm i css117 --save-dev&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// And in your main SASS file
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/node_modules/css117/css117.scss&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;./node_modules/css117/css117.scss&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Install manually&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;install-manually&quot;&gt;Install manually&lt;/h4&gt;
 
 &lt;p&gt;Download from the Github repo (&lt;a href=&quot;https://github.com/aastudio/css117/archive/master.zip&quot;&gt;master.zip&lt;/a&gt;)&lt;/p&gt;
 
