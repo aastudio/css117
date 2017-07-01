@@ -6,8 +6,8 @@
 </description>
     <link>http://aastudio.github.io/css117/css117/</link>
     <atom:link href="http://aastudio.github.io/css117/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Jul 2017 15:40:51 +0200</pubDate>
-    <lastBuildDate>Sat, 01 Jul 2017 15:40:51 +0200</lastBuildDate>
+    <pubDate>Sat, 01 Jul 2017 18:55:28 +0200</pubDate>
+    <lastBuildDate>Sat, 01 Jul 2017 18:55:28 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -49,7 +49,7 @@
 
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
-&lt;h3 id=&quot;first-step--download-the-package&quot;&gt;First step : Download the package&lt;/h3&gt;
+&lt;h3 id=&quot;download-the-package&quot;&gt;01. Download the package&lt;/h3&gt;
 
 &lt;h4 id=&quot;webpack&quot;&gt;Webpack&lt;/h4&gt;
 
@@ -71,7 +71,7 @@
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;And&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;css117&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.scss&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;SASS&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;file&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;second-step--copy-and-paste-variables&quot;&gt;Second step : Copy and paste variables&lt;/h3&gt;
+&lt;h3 id=&quot;copy-and-paste-variables&quot;&gt;02. Copy and paste variables&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Copy and paste variables from &lt;code class=&quot;highlighter-rouge&quot;&gt;css117.scss&lt;/code&gt; to your variables file.&lt;/li&gt;
@@ -125,7 +125,7 @@
     &lt;span class=&quot;n&quot;&gt;small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;500px&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;third-step--set-up-your-html&quot;&gt;Third step : Set up your html&lt;/h3&gt;
+&lt;h3 id=&quot;set-up-your-html&quot;&gt;03. Set up your html&lt;/h3&gt;
 
 &lt;p&gt;Set up your html as followed :&lt;/p&gt;
 
