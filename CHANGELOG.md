@@ -1,5 +1,9 @@
 # Changes to CSS117
 
+### 1.3 (September 22, 2017)
+
+* Flexbox : Switch from inline-block to flexbox
+
 ### 1.2.1 (June 25, 2017)
 
 * Lint css117.scss : Fix some spaces, tabs and name's variables.
