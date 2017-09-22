@@ -50,8 +50,7 @@ $css117-settings: (
   
   col-margin-top:       0, 
   col-margin-bottom:    30px,
-  col-padding:          20px, 
-  col-font-size:        1rem, 
+  col-padding:          20px,
 
   // If nested
   nested-cols-padding:  0, 
@@ -161,7 +160,7 @@ $css117-margin-left-col:    $css117-gutter-unit-less / $css117-total-width * 100
 // Create two classes : .cols & .col
 // -----------------------------------
 
-// Wrap the grid
+// .GRID
 .#{map-get($css117-settings, grid-class-name)} {
   max-width: map-get($css117-settings, max-width);
   box-sizing: border-box;
@@ -180,8 +179,10 @@ $css117-margin-left-col:    $css117-gutter-unit-less / $css117-total-width * 100
   @if map-get($css117-settings, dev) { transition: 250ms cubic-bezier(0.42, 0, 0.58, 1); }
 }
 
+// .COLS
 .#{map-get($css117-settings, cols-class-name)} { 
-  font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
   margin-left: $css117-gutter-perc * -1; 
 
   @if map-get($css117-settings, nested) {
@@ -192,11 +193,9 @@ $css117-margin-left-col:    $css117-gutter-unit-less / $css117-total-width * 100
   }
 }
 
+// .COL
 .#{map-get($css117-settings, col-class-name)} {
   box-sizing: border-box;
-  display: inline-block;
-  vertical-align: top;
-  font-size: map-get($css117-settings, col-font-size);
   margin-top: map-get($css117-settings, col-margin-top);
   margin-bottom: map-get($css117-settings, col-margin-bottom);
   margin-left: $css117-gutter-unit-less / $css117-total-width * 100%;
@@ -310,9 +309,9 @@ $css117-margin-left-col:    $css117-gutter-unit-less / $css117-total-width * 100
     @if map-get($css117-settings, nested) { 
       .#{map-get($css117-settings, col-class-name)} { 
         .#{map-get($css117-settings, cols-class-name)} { margin-left: map-get($css117-settings, col-padding) * -1; }
-        .#{map-get($css117-settings, col-class-name)} { 
-          width: 100%; 
-          margin-left: 0; 
+        .#{map-get($css117-settings, col-class-name)} {
+          width: 100%;
+          margin-left: 0;
         } 
       }
     }
