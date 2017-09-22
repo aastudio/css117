@@ -31,12 +31,12 @@ $css117-settings: (
   
   // Number of columns
   nb-of-columns:        12, 
-  columns-start-from:     1, 
-  choose-columns:         false, 
+  columns-start-from:   1, 
+  choose-columns:       false, 
   which-columns:        (4, 6, 8, 12), 
 
   // Nested grid ?
-  nested:           false, 
+  nested:                 false, 
   nested-start-from:      2, 
   choose-nested-columns:  false, 
   which-nested-columns:   (4, 6, 8, 12), 
@@ -45,12 +45,12 @@ $css117-settings: (
   // Margins and paddings
   // -----------------------------------
   grid-margin-top:      0, 
-  grid-margin-bottom:     30px, 
-  grid-padding:       0, 
+  grid-margin-bottom:   30px, 
+  grid-padding:         0, 
   
   col-margin-top:       0, 
-  col-margin-bottom:      30px, 
-  col-padding:        20px, 
+  col-margin-bottom     30px, 
+  col-padding:          20px, 
   col-font-size:        1rem, 
 
   // If nested
@@ -65,7 +65,7 @@ $css117-settings: (
   // Offset Classes ?
   // -----------------------------------
   offset-class:       false, 
-  offset-class-name:      'offset', 
+  offset-class-name:   'offset', 
 
   
   // Visibility Classes ?
@@ -76,7 +76,7 @@ $css117-settings: (
   // Production mode ?
   // -----------------------------------
   dev:            false, 
-  debug:            false
+  debug:          false
   ) !default;
 
 $css117-breakpoints: (
