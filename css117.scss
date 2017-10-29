@@ -1,93 +1,133 @@
-//------------------------------------
+// ======================================== //
 //  THE GRID
-//------------------------------------
+// ======================================== //
 
-// Variables
+
+// Instructions
+// ----------------------------------------
+//
+// In your SASS project partials (usually named variables.scss) :
+//
+// - Copy and paste the following map : $css117-breakpoints
+// - Copy and paste the following variables : $css117-space & $css117-variables
+// - Remove the !default flag on each.
+// - Change variables has you need (more info https://css117.io)
 // ----------------------------------------
 
-$css117-settings: (
+// DRY variables
+$css117-space: 30px !default;
+$css117-col:   'col' !default;
+
+
+// Map (breakpoints)
+// ----------------------------------------
+// 1. Keep the order from largest to smallest breakpoint
+// 2. Media Queries are based on max-width (no min-width)
+//    Mobile First is great for conception but useless for CSS
+// 3. Value be in pixels (They will be converted below as REM (cf.@function rem))
+
+$css117-bkpts: 800, 500 !default;
+
+
+// Grid variables
+// ----------------------------------------
+
+$css117-variables: (
 
   // Classes name
   // -----------------------------------
-  grid-class-name:      'grid', 
-  cols-class-name:      'cols', 
-  col-class-name:       'col', 
-
+  grid-class-name:      $css117-col+'s',  // cols
+  col-class-name:       $css117-col,      // col
 
   // Breakpoints
   // -----------------------------------
-  largest-breakpoint:     'large', 
-  full-width-on-smallest: true, 
-
+  largest-breakpoint:   $css117-col+'--up', // col--up
+  full-width-on-smallest: true,
   
   // Grid dimensions
   // -----------------------------------
-  max-width:          1000px, 
-  gutter-width:       20px, 
+  max-width:            1200px,
+  gutter-width:   $css117-space,
+  gutter-height:  $css117-space,
 
 
   // Columns settings
   // -----------------------------------
   
   // Number of columns
-  nb-of-columns:        12, 
-  columns-start-from:   1, 
-  choose-columns:       false, 
-  which-columns:        (4, 6, 8, 12), 
-
-  // Nested grid ?
-  nested:                 false, 
-  nested-start-from:      2, 
-  choose-nested-columns:  false, 
-  which-nested-columns:   (4, 6, 8, 12), 
-
+  nb-of-columns:        12,
+  columns-start-from:   1,
+  choose-columns:       false,
+  which-columns:        (4,5,6,7,8,12),
+  
 
   // Margins and paddings
   // -----------------------------------
-  grid-margin-top:      0, 
-  grid-margin-bottom:   30px, 
-  grid-padding:         0, 
+  grid-margin-top:    $css117-space,
+  grid-margin-bottom: $css117-space,
+  grid-margin-left:   $css117-space,
+  grid-margin-right:  $css117-space,
   
-  col-margin-top:       0, 
-  col-margin-bottom:    30px,
-  col-padding:          20px,
-
-  // If nested
-  nested-cols-padding:  0, 
+  col-padding:        $css117-space,
 
 
-  // Center the grid ?
+  // Add a wrapper ?
   // -----------------------------------
-  centered:           true, 
-  
-  
-  // Offset Classes ?
+  wrapper:              true,
+  wrapper-class-name:   $css117-col+'s-wrapper', // -> cols--wrapper
+
+
+  // Legacy Browser Support
   // -----------------------------------
-  offset-class:       false, 
-  offset-class-name:   'offset', 
+  old-browser-support:  true,
+  class-prefixed:       true,
+
+
+  // Alignement of the grid
+  // -----------------------------------
+  grid-centered:        false,
 
   
   // Visibility Classes ?
   // -----------------------------------
-  visibility-class:     false, 
+  visibility-class:     true,
   
-
   // Production mode ?
   // -----------------------------------
-  dev:            false, 
-  debug:          false
-  ) !default;
-
-$css117-breakpoints: (
-  medium:     800px, 
-  small:      500px
-  ) !default;
+  dev:                  false,
+  debug:                false
+) !default;
 
 
 
-// ====================================================================
+
+
+
+
+
+
+
+
+// ========================================================================================================================================
+// ========================================================================================================================================
 // /!\ Do not modify from here
+// ========================================================================================================================================
+// ========================================================================================================================================
+
+
 // ====================================================================
+// BKPT - Create reusable variables over breakpoints
+// ex: bkpt('col--800') -> 800px
+// ====================================================================
+
+// Create an empy map
+$css117-breakpoints: ();
+
+// Push inside the map the value from $css117-bkpts
+@each $css117-bkpt in $css117-bkpts {
+  $css117-breakpoints: map-merge($css117-breakpoints, ($css117-col+'--'+$css117-bkpt: $css117-bkpt * 1px));
+}
+
 
 // ====================================================================
 // FUNCTIONS
