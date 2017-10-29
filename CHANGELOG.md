@@ -1,5 +1,9 @@
 # Changes to CSS117
 
+### 2.0 (October 28, 2017)
+
+* CSS Grid Layout Module : Switch from flexbox to grid layout
+
 ### 1.3 (September 22, 2017)
 
 * Flexbox : Switch from inline-block to flexbox
