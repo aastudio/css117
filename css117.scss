@@ -381,3 +381,14 @@ $em-base: 16 !default;
     @include grid-math($css117-breakpoint-name);
   }
 }
+
+
+
+
+// ====================================================================
+// TERMINAL DEBBUGER
+// ====================================================================
+
+@if map-get($css117-variables, debug) {
+  @debug '\a\a\a\a\a\a DRY VARIABLES:\a- space: #{$css117-space}\a- col-class-name: #{map-get($css117-variables, col-class-name)}\a\aGRID BREAKPOINTS:\a- breakpoints: #{$css117-breakpoints)}\a\aGRID SETTINGS:\a- grid-class-name: #{map-get($css117-variables, grid-class-name)}\a- col-class-name: #{map-get($css117-variables, col-class-name)}\a\a- largest-breakpoint: #{map-get($css117-variables, largest-breakpoint)}\a- full-width-on-smallest : #{map-get($css117-variables, full-width-on-smallest)}\a\a- max-width: #{map-get($css117-variables, max-width)}\a- gutter-width: #{map-get($css117-variables, gutter-width)}\a- gutter-height: #{map-get($css117-variables, gutter-height)}\a\a- nb-of-columns: #{map-get($css117-variables, nb-of-columns)}\a- columns-start-from: #{map-get($css117-variables, columns-start-from)}\a- choose-column: #{map-get($css117-variables, choose-columns)}\a- which-columns: #{map-get($css117-variables, which-columns)}\a\a- grid-margin-top: #{map-get($css117-variables, grid-margin-top)}\a- grid-margin-bottom: #{map-get($css117-variables, grid-margin-bottom)}\a- grid-margin-left: #{map-get($css117-variables, grid-margin-left)}\a- grid-margin-right: #{map-get($css117-variables, grid-margin-right)}\a\a- col-padding: #{map-get($css117-variables, col-padding)}\a\a- wrapper: #{map-get($css117-variables, wrapper)}\a- wrapper-class-nameg: #{map-get($css117-variables, wrapper-class-nameg)}\a\a- old-browser-support: #{map-get($css117-variables, old-browser-support)}\a- class-prefixed: #{map-get($css117-variables, class-prefixed)}\a\a- grid-centered: #{map-get($css117-variables, grid-centered)}\a\a- visibility-class: #{map-get($css117-variables, visibility-class)}\a\a- dev: #{map-get($css117-variables, dev)}\a- debug: #{map-get($css117-variables, debug)}\a\a\a\a';
+}
