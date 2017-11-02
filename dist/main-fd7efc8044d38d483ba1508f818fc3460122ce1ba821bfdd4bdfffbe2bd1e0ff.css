@@ -916,28 +916,53 @@ p {
 table {
   font-size: 0.9rem;
   text-align: left;
-  width: 100%; }
-  @media (max-width: 46.875rem) {
+  width: 100%;
+  margin-top: 30px;
+  table-layout: fixed; }
+  @media (max-width: 39.0625rem) {
     table {
-      margin-top: 2rem; } }
+      margin-top: 2rem;
+      font-size: 1rem; } }
 
 thead {
   font-family: "Roboto Mono", Consolas, monaco, monospace;
   text-align: left;
-  border-top: 1px #ddd solid;
-  border-bottom: 1px #ddd solid;
-  background-color: #eee; }
-  @media (max-width: 46.875rem) {
-    #customize-variables + p + table thead {
-      display: none; } }
+  background-color: rgba(79, 74, 123, 0.75); }
+  thead th {
+    color: #fff;
+    font-size: 0.75rem; }
+    thead th:first-child {
+      width: 200px; }
+    thead th:nth-child(2) {
+      width: 100px; }
+    thead th:nth-child(3) {
+      width: 70px;
+      padding-left: 0; }
+    thead th:first-child {
+      font-weight: 700;
+      font-size: 0.9rem;
+      background-color: rgba(0, 0, 0, 0.1); }
+    @media (max-width: 39.0625rem) {
+      thead th {
+        display: none; }
+        thead th:first-child {
+          display: block; } }
+
+thead + tbody > tr:first-child td {
+  padding-top: 20px; }
+
+@media (max-width: 39.0625rem) {
+  tr {
+    display: block; } }
 
 th, td {
-  padding: 10px 20px;
+  padding: 10px 20px 10px 0;
   white-space: nowrap; }
 
 th {
   font-weight: 400;
-  color: #000; }
+  color: #000;
+  padding-left: 10px; }
 
 td {
   border-bottom: 1px #ddd solid;
@@ -947,28 +972,25 @@ td {
     white-space: normal;
     max-width: 300px;
     color: #666; }
-  @media (max-width: 31.25rem) {
-    #customize-variables + p + table td {
-      display: block;
-      padding: 0;
-      border-bottom: none; } }
-  @media (max-width: 31.25rem) {
-    #customize-variables + p + table td:nth-child(n+2) {
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      text-indent: 3px;
-      border-bottom: 1px #ccc solid; } }
 
-@media (max-width: 31.25rem) {
-  #customize-variables + p + table th:nth-child(2),
-  #customize-variables + p + table th:nth-child(3),
-  #customize-variables + p + table td:nth-child(2),
-  #customize-variables + p + table td:nth-child(3) {
+@media (max-width: 39.0625rem) {
+  td:nth-child(1),
+  td:nth-child(4) {
+    display: block;
+    border: none;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0; }
+
+  thead + tbody > tr td:nth-child(4) {
+    padding-top: 0;
+    padding-left: 4px;
+    padding-bottom: 20px;
+    max-width: 100%; }
+
+  td:nth-child(2),
+  td:nth-child(3) {
     display: none; } }
-
-td:empty {
-  background-color: #fcc; }
-
 code, pre {
   font-family: "Source Code Pro",  "Consolas",  "Courier",  monospace; }
 
@@ -982,6 +1004,9 @@ code, pre {
   @media (max-width: 68.75rem) {
     .highlighter-rouge {
       padding-top: 2px; } }
+  @media (max-width: 39.0625rem) {
+    td .highlighter-rouge {
+      font-size: 1.2rem; } }
 
 .language-cli {
   color: #fff; }
