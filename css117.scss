@@ -17,38 +17,38 @@
 // DRY variables
 $css117-space: 30px !default;
 $css117-col:   'col' !default;
+$css117-medias: img, video, picture !default; // Usage : .col > img | For Responsive media tag
 
 
-// Map (breakpoints)
+// Breakpoints
 // ----------------------------------------
 // 1. Keep the order from largest to smallest breakpoint
 // 2. Media Queries are based on max-width (no min-width)
 //    Mobile First is great for conception but useless for CSS
 // 3. Value be in pixels (They will be converted below as REM (cf.@function rem))
-
 $css117-bkpts: 800, 500 !default;
 
 
 // Grid variables
 // ----------------------------------------
-
 $css117-variables: (
+
 
   // Classes name
   // -----------------------------------
   grid-class-name:      $css117-col+'s',  // cols
   col-class-name:       $css117-col,      // col
 
+
   // Breakpoints
   // -----------------------------------
   largest-breakpoint:   $css117-col+'--up', // col--up
   full-width-on-smallest: true,
   
-  // Grid dimensions
+
+  // Grid max-width
   // -----------------------------------
-  max-width:            1200px,
-  gutter-width:   $css117-space,
-  gutter-height:  $css117-space,
+  max-width:            1000px, // px or %
 
 
   // Columns settings
@@ -61,48 +61,70 @@ $css117-variables: (
   which-columns:        (4,5,6,7,8,12),
   
 
-  // Margins and paddings
+  // Spacing
   // -----------------------------------
-  grid-margin-top:    $css117-space,
-  grid-margin-bottom: $css117-space,
-  grid-margin-left:   $css117-space,
-  grid-margin-right:  $css117-space,
-  
-  col-padding:        $css117-space,
+
+  // space between grids
+  grid-margin-top:      0,
+  grid-margin-bottom:   0,
+  grid-margin-left:     $css117-space,  // only if grid-centered: false
+  grid-margin-right:    $css117-space,  // only if grid-centered: false
+
+  // space between grids edges and its items
+  grid-padding-top:     $css117-space,
+  grid-padding-bottom:  $css117-space,
+  grid-padding-left:    $css117-space,
+  grid-padding-right:   $css117-space,
+
+  // space between grid items
+  gutter-width:         $css117-space,
+  gutter-height:        $css117-space,
+
+  // space inside grid items
+  col-padding-top:      $css117-space,
+  col-padding-bottom:   $css117-space,
+  col-padding-left:     $css117-space,
+  col-padding-right:    $css117-space,
 
 
   // Add a wrapper ?
   // -----------------------------------
-  wrapper:              true,
-  wrapper-class-name:   $css117-col+'s-wrapper', // -> cols--wrapper
+  wrapper:                true,
+  wrapper-class-name:     $css117-col+'s-wrapper', // -> cols--wrapper
+
+  // space between wrapper and other grids
+  wrapper-margin-top:     $css117-space,
+  wrapper-margin-bottom:  $css117-space,
+
+  // space inside the wrapper from its grids
+  wrapper-padding-top:    $css117-space * 2, // Effective if > gutter-height
+  wrapper-padding-bottom: $css117-space * 2, // Effective if > gutter-height
 
 
-  // Legacy Browser Support
+  // Browser Support
   // -----------------------------------
-  old-browser-support:  true,
-  class-prefixed:       true,
+  grid-feature:         true,
+  flexbox-fallback:     true,
+  float-fallback:       true,
+
+  prefix-classes:       false, // I highly recommend to postprocess classes with autoprefixer instead using webpack or gulp
 
 
   // Alignement of the grid
   // -----------------------------------
-  grid-centered:        false,
+  grid-centered:        true,
 
   
   // Visibility Classes ?
   // -----------------------------------
   visibility-class:     true,
   
+
   // Production mode ?
   // -----------------------------------
   dev:                  false,
   debug:                false
 ) !default;
-
-
-
-
-
-
 
 
 
@@ -123,7 +145,13 @@ $css117-variables: (
 // Create an empy map
 $css117-breakpoints: ();
 
+
 // Push inside the map the value from $css117-bkpts
+// Create breakpoints from $css117-bkpts: 800, 500;
+// -> col--800: 800px
+// -> col--500: 500px
+// ...
+// Can be use in the CSS with the mq mixin : @include mq(col--500) { ... }
 @each $css117-bkpt in $css117-bkpts {
   $css117-breakpoints: map-merge($css117-breakpoints, ($css117-col+'--'+$css117-bkpt: $css117-bkpt * 1px));
 }
@@ -158,6 +186,22 @@ $em-base: 16 !default;
 }
 
 
+// Optimize shorthand's margin and padding properties. Works also with border-width, border-color and border-style
+// Ex: @include short-prop(margin, 10px, 11px, 15px, 11px) -> output : { margin: 10px 11px 15px; }
+@mixin short-prop($css117-p, $css117-t, $css117-r, $css117-b, $css117-l){
+  @if $css117-t == $css117-l and $css117-t == $css117-r and $css117-t == $css117-b {
+    #{$css117-p}: $css117-t;
+  } @else if $css117-t == $css117-b and $css117-l == $css117-r {
+    #{$css117-p}: $css117-t $css117-r;
+  } @else if $css117-l == $css117-r {
+    #{$css117-p}: $css117-t $css117-r $css117-b
+  } @else {
+    #{$css117-p}: $css117-t $css117-r $css117-b $css117-l;
+  }
+}
+
+
+
 // ====================================================================
 // MEDIA QUERIES
 // ====================================================================
@@ -178,68 +222,151 @@ $em-base: 16 !default;
 // GRID BUILDER
 // ====================================================================
 
-
 // .GRID
 // ====================================================================
 .#{map-get($css117-variables, grid-class-name)} {
 
-  @if map-get($css117-variables, class-prefixed) {
-    display: -ms-grid;
-  }
-  display: grid;
 
-  @if map-get($css117-variables, class-prefixed) {
-    -ms-grid-columns: [start] ([col] 1fr)[12] [end];
-  }
-  grid-template-columns: [start] repeat(map-get($css117-variables, nb-of-columns), [col] 1fr) [end];
+  @if map-get($css117-variables, flexbox-fallback) {
 
-  @if not map-get($css117-variables, old-browser-support) {
+    @if map-get($css117-variables, prefix-classes) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @if map-get($css117-variables, grid-feature) {
+    display: grid;
+    grid-template-columns: [start] repeat(map-get($css117-variables, nb-of-columns), [col] 1fr) [end];
+
+    // Grid gutter
+    @if map-get($css117-variables, gutter-width) == map-get($css117-variables, gutter-height) {
+      grid-gap: map-get($css117-variables, gutter-width);
+      gap: map-get($css117-variables, gutter-width);
+    } @else {
+      grid-column-gap: map-get($css117-variables, gutter-width);
+      column-gap: map-get($css117-variables, gutter-width);
+      grid-row-gap: map-get($css117-variables, gutter-height);
+      row-gap: map-get($css117-variables, gutter-height);
+    }
+  }
+
+
+
+  // Max-width
+  @if not map-get($css117-variables, flexbox-fallback) and not map-get($css117-variables, float-fallback) and map-get($css117-variables, grid-feature) {
     max-width: map-get($css117-variables, max-width);
   }
-
-  // Margin
-  @if map-get($css117-variables, grid-centered) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  margin-top: map-get($css117-variables, grid-margin-top);
-  margin-bottom: map-get($css117-variables, grid-margin-bottom);
-
-  // Padding
-  @if not map-get($css117-variables, old-browser-support) and map-get($css117-variables, grid-margin-left) == map-get($css117-variables, grid-margin-right) {
-    padding: 0 map-get($css117-variables, grid-margin-left);
-  } @else if map-get($css117-variables, grid-margin-left) != map-get($css117-variables, grid-margin-right) {
-    padding: 0 map-get($css117-variables, grid-margin-left) 0 map-get($css117-variables, grid-margin-right);
-  }
-
-  // Grid Gap
-  @if map-get($css117-variables, gutter-width) == map-get($css117-variables, gutter-height) {
-    grid-gap: map-get($css117-variables, gutter-width);
-    gap: map-get($css117-variables, gutter-width);
-  } @else {
-    grid-column-gap: map-get($css117-variables, gutter-width);
-    column-gap: map-get($css117-variables, gutter-width);
-    grid-row-gap: map-get($css117-variables, gutter-height);
-    row-gap: map-get($css117-variables, gutter-height);
-  }
-
-  // Legacy Browser Support
-  @if map-get($css117-variables, old-browser-support) {
-    overflow: hidden;
-    padding: 0  map-get($css117-variables, gutter-width) * 0.5;
-
+  @if map-get($css117-variables, flexbox-fallback) or map-get($css117-variables, float-fallback) {
+    
     @if unit(map-get($css117-variables, max-width)) == '%' {
       max-width: calc(#{map-get($css117-variables, max-width)} + #{map-get($css117-variables, gutter-width)});
     } @else {
       max-width: map-get($css117-variables, max-width) + map-get($css117-variables, gutter-width);
     }
 
-    @supports (display: grid) {
-      overflow: auto;
-      max-width: map-get($css117-variables, max-width);
-      padding: 0 map-get($css117-variables, grid-margin-right) 0 map-get($css117-variables, grid-margin-left);
+    @if map-get($css117-variables, grid-feature) {
+      @supports (display: grid) {
+        max-width: map-get($css117-variables, max-width);
+      }
     }
   }
+
+
+
+  // Margin
+  // ------------------------------
+  // No margin collapse in a flex context
+  // In flex and float, side margin of .col can't be changed.
+  // So if .grid margin > .col margin, then margin = .grid margin - .col margin
+  $grid-margin-left: 0;
+  $grid-margin-right: 0;
+
+  @if map-get($css117-variables, grid-margin-left) >= ( map-get($css117-variables, gutter-width) * 0.5 ) {
+    $grid-margin-left: map-get($css117-variables, grid-margin-left) - map-get($css117-variables, gutter-width) * 0.5;
+  } @else {
+    $grid-margin-left: 0;
+  }
+
+  @if map-get($css117-variables, grid-margin-right) >= ( map-get($css117-variables, gutter-width) * 0.5 ) {
+    $grid-margin-right: map-get($css117-variables, grid-margin-right) - map-get($css117-variables, gutter-width) * 0.5;
+  } @else {
+    $grid-margin-right: 0;
+  }
+
+  // If grid is centered
+  @if map-get($css117-variables, grid-centered) {
+    @include short-prop(margin, map-get($css117-variables, grid-margin-top), auto, map-get($css117-variables, grid-margin-bottom), auto);
+  } @else {
+    @include short-prop(margin, map-get($css117-variables, grid-margin-top), $grid-margin-right, map-get($css117-variables, grid-margin-bottom), $grid-margin-left);
+
+      @if map-get($css117-variables, grid-feature) {
+        @supports (display: grid){
+          @include short-prop(margin, map-get($css117-variables, grid-margin-top), map-get($css117-variables, grid-margin-right), map-get($css117-variables, grid-margin-bottom), map-get($css117-variables, grid-margin-left));
+        }
+      }
+  }
+
+
+  // Padding
+  // Same reason as below
+  $grid-padding-left: 0;
+  $grid-padding-right: 0;
+  $flex-gutter-height: 0; // $grid-padding-top
+
+  @if map-get($css117-variables, grid-padding-left) >= ( map-get($css117-variables, gutter-width) * 0.5 ) {
+    $grid-padding-left: map-get($css117-variables, grid-padding-left) - map-get($css117-variables, gutter-width) * 0.5;    
+  } @else {
+    $grid-padding-left: 0;
+  }
+
+  @if map-get($css117-variables, grid-padding-right) >= ( map-get($css117-variables, gutter-width) * 0.5 ) {
+    $grid-padding-right: map-get($css117-variables, grid-padding-right) - map-get($css117-variables, gutter-width) * 0.5;    
+  } @else {
+    $grid-padding-right: 0;
+  }
+
+  @if map-get($css117-variables, grid-padding-top) >= map-get($css117-variables, gutter-height) {
+    $flex-gutter-height: map-get($css117-variables, grid-padding-top) - map-get($css117-variables, gutter-height);
+  } @else {
+    $flex-gutter-height: 0;
+  }
+
+  @include short-prop(padding, $flex-gutter-height, $grid-padding-right, map-get($css117-variables, grid-padding-bottom), $grid-padding-left);
+
+  @if map-get($css117-variables, grid-feature) {
+    @supports (display: grid){
+      @include short-prop(padding, map-get($css117-variables, grid-padding-top), map-get($css117-variables, grid-padding-right), map-get($css117-variables, grid-padding-bottom), map-get($css117-variables, grid-padding-left));
+    }
+  }
+
+
+
+  // Overflow
+  @if map-get($css117-variables, float-fallback) { 
+    overflow: hidden;
+
+    @if not map-get($css117-variables, grid-feature) and not map-get($css117-variables, flexbox-fallback) {
+      @supports (display: flow-root){
+        overflow: unset;
+      }
+      display: flow-root;
+    }
+
+    @if map-get($css117-variables, grid-feature) or map-get($css117-variables, flexbox-fallback) {
+      @supports (display: grid) or (display: flex) or (display: -ms-flex) or (display: -ms-box)  {
+        overflow: auto; // IE11 doesn't understand 'unset' so use 'auto' instead
+      }
+    }
+  }
+
+
 
   // if dev: true
   @if map-get($css117-variables, dev) { transition: 250ms cubic-bezier(0.42, 0, 0.58, 1); }
@@ -251,13 +378,26 @@ $em-base: 16 !default;
 // .COL
 // ====================================================================
 .#{map-get($css117-variables, col-class-name)} {
-  padding: map-get($css117-variables, col-padding);
+  @include short-prop(padding, map-get($css117-variables, col-padding-top), map-get($css117-variables, col-padding-right), map-get($css117-variables, col-padding-bottom), map-get($css117-variables, col-padding-left));
 
-  @if map-get($css117-variables, old-browser-support) {
-    float: left;
+  @if map-get($css117-variables, flexbox-fallback) or map-get($css117-variables, float-fallback)  {
+    
+    @if map-get($css117-variables, prefix-classes) { -webkit-box-sizing: border-box; }
     box-sizing: border-box;
-    margin: map-get($css117-variables, gutter-height) map-get($css117-variables, gutter-width) * 0.5 0;
 
+    @if map-get($css117-variables, float-fallback) { 
+      float: left; 
+    }
+
+    // Flexbox gutter
+    // ====================================================================
+    // - It follows the logic of grid-gap
+    // - Means only put space between items and not between items and their container
+    // - Space between items and their container are set by grid-padding-*
+    margin: map-get($css117-variables, gutter-height) map-get($css117-variables, gutter-width) * 0.5 0;
+  }
+
+  @if map-get($css117-variables, grid-feature) {
     @supports (display: grid) {
       .#{map-get($css117-variables, grid-class-name)} & {
         width: auto;
@@ -266,10 +406,14 @@ $em-base: 16 !default;
     }
   }
   
-  &.last { display: block; }
-
-  img { max-width: 100%; }
-
+  // Responsive Medias 
+  @each $media in $css117-medias { 
+    #{$media} { 
+      display: block;
+      max-width: 100%; 
+    }
+  } 
+  
   // if dev: true
   @if map-get($css117-variables, dev) {
     $dev-color-1: rgba(0, 0, 255, 0.8);
@@ -282,6 +426,12 @@ $em-base: 16 !default;
 }
 
 
+// Create a .col--cleared class just in case !
+@if map-get($css117-variables, float-fallback) {
+  .#{map-get($css117-variables, col-class-name)}--cleared { clear: left; }
+}
+
+
 
 // GRID-WRAPPER
 // ====================================================================
@@ -289,14 +439,26 @@ $em-base: 16 !default;
   .#{map-get($css117-variables, wrapper-class-name)} {
     background-color: #ccc; // to be override
 
-    // Keep a consistency for vertical gutters
-    padding: 0 0 1px;
-    & + .#{map-get($css117-variables, grid-class-name)} { margin-top: 0 }
+    // Grid-wrapper margin
+    @include short-prop(margin, map-get($css117-variables, wrapper-margin-top), 0, map-get($css117-variables, wrapper-margin-bottom), 0);
 
-    @supports (display: grid) {
-      margin: $css117-space 0;
-      padding: 1px 0;
+    // Grid-wrapper padding
+    $wrapper-padding-top: 0;
+    $wrapper-padding-bottom: 0;
+
+    @if map-get($css117-variables, wrapper-padding-top) >= map-get($css117-variables, gutter-height) {
+      $wrapper-padding-top: map-get($css117-variables, wrapper-padding-top) - map-get($css117-variables, gutter-height);
+    } @else {
+      $wrapper-padding-top: 0;
     }
+    
+    @if map-get($css117-variables, wrapper-padding-bottom) > map-get($css117-variables, gutter-height) {
+      $wrapper-padding-bottom: map-get($css117-variables, wrapper-padding-bottom) - map-get($css117-variables, gutter-height);
+    } @else {
+      $wrapper-padding-bottom: 0;
+    }
+
+    @include short-prop(padding, $wrapper-padding-top, 0, $wrapper-padding-bottom, 0);
   }
 }
 
@@ -312,20 +474,27 @@ $em-base: 16 !default;
 
 // MIXIN : COLUMNS-MATH / Calculate the width and margin-left of each columns
 // ====================================================================
-
-@mixin columns-math($css117-i, $css117-breakpoint-name) {
+$css117-fluid-gutter: strip-units(map-get($css117-variables, gutter-width)) / strip-units(map-get($css117-variables, max-width)) * 100%;
 
 // Generate a width for each columns
-.#{$css117-breakpoint-name}-#{$css117-i} {
-    @if map-get($css117-variables, old-browser-support) {
-      width: mq-loop($css117-i);
+@mixin columns-math($css117-i, $css117-breakpoint-name) {
+  .#{$css117-breakpoint-name}-#{$css117-i} {
+    @if map-get($css117-variables, flexbox-fallback) or map-get($css117-variables, float-fallback) {
+      width: mq-loop($css117-i) - $css117-fluid-gutter;
       width: calc(#{mq-loop($css117-i)} - #{map-get($css117-variables, gutter-width)});
+
+      @if map-get($css117-variables, prefix-classes){
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 1 calc(#{mq-loop($css117-i)} - #{map-get($css117-variables, gutter-width)});
+        -ms-flex: 0 1 calc(#{mq-loop($css117-i)} - #{map-get($css117-variables, gutter-width)});
+      }
+
+      flex: 0 1 calc(#{mq-loop($css117-i)} - #{map-get($css117-variables, gutter-width)});
     }
-    @if map-get($css117-variables, class-prefixed) {
-      -ms-grid-column-span: #{$css117-i};
-      -ms-grid-column: auto;
+
+    @if map-get($css117-variables, grid-feature) {
+      grid-column: auto / span #{$css117-i};
     }
-    grid-column: auto / span #{$css117-i};
   }
 }
 
@@ -339,12 +508,27 @@ $em-base: 16 !default;
   // If full-width-on-smallest = true
   @if $css117-breakpoint-name == nth(map-keys($css117-breakpoints), -1) and map-get($css117-variables, full-width-on-smallest) {
 
+    // .cols
     .#{map-get($css117-variables, grid-class-name)} { 
-      grid-column-gap: 0;
-      column-gap: 0;
+      @if map-get($css117-variables, grid-feature) {
+        grid-column-gap: 0;
+        column-gap: 0;
+      }
     }
 
-    .#{map-get($css117-variables, col-class-name)} { grid-column: start / end; }
+    // .col
+    .#{map-get($css117-variables, col-class-name)} { 
+
+      @if map-get($css117-variables, float-fallback) or map-get($css117-variables, flexbox-fallback) {
+        width: 100%;
+        flex-basis: 100%;
+        margin: map-get($css117-variables, gutter-height) 0 0;
+      }
+
+      @if map-get($css117-variables, grid-feature) {
+        grid-column: start / end;
+      }
+    }
 
   } @else {
 
@@ -390,5 +574,5 @@ $em-base: 16 !default;
 // ====================================================================
 
 @if map-get($css117-variables, debug) {
-  @debug '\a\a\a\a\a\a DRY VARIABLES:\a- space: #{$css117-space}\a- col-class-name: #{map-get($css117-variables, col-class-name)}\a\aGRID BREAKPOINTS:\a- breakpoints: #{$css117-breakpoints)}\a\aGRID SETTINGS:\a- grid-class-name: #{map-get($css117-variables, grid-class-name)}\a- col-class-name: #{map-get($css117-variables, col-class-name)}\a\a- largest-breakpoint: #{map-get($css117-variables, largest-breakpoint)}\a- full-width-on-smallest : #{map-get($css117-variables, full-width-on-smallest)}\a\a- max-width: #{map-get($css117-variables, max-width)}\a- gutter-width: #{map-get($css117-variables, gutter-width)}\a- gutter-height: #{map-get($css117-variables, gutter-height)}\a\a- nb-of-columns: #{map-get($css117-variables, nb-of-columns)}\a- columns-start-from: #{map-get($css117-variables, columns-start-from)}\a- choose-column: #{map-get($css117-variables, choose-columns)}\a- which-columns: #{map-get($css117-variables, which-columns)}\a\a- grid-margin-top: #{map-get($css117-variables, grid-margin-top)}\a- grid-margin-bottom: #{map-get($css117-variables, grid-margin-bottom)}\a- grid-margin-left: #{map-get($css117-variables, grid-margin-left)}\a- grid-margin-right: #{map-get($css117-variables, grid-margin-right)}\a\a- col-padding: #{map-get($css117-variables, col-padding)}\a\a- wrapper: #{map-get($css117-variables, wrapper)}\a- wrapper-class-nameg: #{map-get($css117-variables, wrapper-class-nameg)}\a\a- old-browser-support: #{map-get($css117-variables, old-browser-support)}\a- class-prefixed: #{map-get($css117-variables, class-prefixed)}\a\a- grid-centered: #{map-get($css117-variables, grid-centered)}\a\a- visibility-class: #{map-get($css117-variables, visibility-class)}\a\a- dev: #{map-get($css117-variables, dev)}\a- debug: #{map-get($css117-variables, debug)}\a\a\a\a';
+  @debug '\a\a\a\a\a\a DRY VARIABLES:\a- space: #{$css117-space}\a- col-class-name: #{map-get($css117-variables, col-class-name)}\a\aGRID BREAKPOINTS:\a- breakpoints: #{$css117-breakpoints}\a\aGRID SETTINGS:\a- grid-class-name: #{map-get($css117-variables, grid-class-name)}\a- col-class-name: #{map-get($css117-variables, col-class-name)}\a\a- largest-breakpoint: #{map-get($css117-variables, largest-breakpoint)}\a- full-width-on-smallest : #{map-get($css117-variables, full-width-on-smallest)}\a\a- max-width: #{map-get($css117-variables, max-width)}\a- gutter-width: #{map-get($css117-variables, gutter-width)}\a- gutter-height: #{map-get($css117-variables, gutter-height)}\a\a- nb-of-columns: #{map-get($css117-variables, nb-of-columns)}\a- columns-start-from: #{map-get($css117-variables, columns-start-from)}\a- choose-column: #{map-get($css117-variables, choose-columns)}\a- which-columns: #{map-get($css117-variables, which-columns)}\a\a- grid-margin-top: #{map-get($css117-variables, grid-margin-top)}\a- grid-margin-bottom: #{map-get($css117-variables, grid-margin-bottom)}\a- grid-margin-left: #{map-get($css117-variables, grid-margin-left)}\a- grid-margin-right: #{map-get($css117-variables, grid-margin-right)}\a\a- col-padding-top: #{map-get($css117-variables, col-padding-top)}\a\a- col-padding-bottom: #{map-get($css117-variables, col-padding-bottom)}\a\a- col-padding-left: #{map-get($css117-variables, col-padding-left)}\a\a- col-padding-right: #{map-get($css117-variables, col-padding-right)}\a\a- wrapper: #{map-get($css117-variables, wrapper)}\a- wrapper-class-nameg: #{map-get($css117-variables, wrapper-class-nameg)}\a\a- float-fallback: #{map-get($css117-variables, float-fallback)}\a- class-prefixed: #{map-get($css117-variables, class-prefixed)}\a\a- grid-centered: #{map-get($css117-variables, grid-centered)}\a\a- visibility-class: #{map-get($css117-variables, visibility-class)}\a\a- dev: #{map-get($css117-variables, dev)}\a- debug: #{map-get($css117-variables, debug)}\a\a\a\a';
 }

@@ -1,6 +1,6 @@
 # Changes to CSS117
 
-### 2.0 (October 28, 2017)
+### 2.0 (November 2, 2017)
 
 * CSS Grid Layout Module : Switch from flexbox to grid layout
 
