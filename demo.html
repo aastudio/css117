@@ -5,6 +5,7 @@
 	<title>CSS117 - Demo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+<<<<<<< HEAD
 <style type="text/css">.grid {
   max-width: 1400px;
   box-sizing: border-box;
@@ -765,6 +766,264 @@
     display: none; }
   .small-visible {
     display: inline-block; } }
+=======
+	<script>
+		document.createElement('header');
+	</script>
+<style type="text/css">.cols {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: [start] repeat(12, [col] 1fr) [end];
+  grid-gap: 30px;
+  gap: 30px;
+  max-width: 1030px;
+  margin: 0 auto;
+  padding: 0px 15px 30px;
+  overflow: hidden; }
+  @supports (display: grid) {
+    .cols {
+      max-width: 1000px; } }
+  @supports (display: grid) {
+    .cols {
+      padding: 30px; } }
+  @supports (display: grid) or ((display: -webkit-box) or (display: flex)) or (display: -ms-flex) or (display: -ms-box) {
+    .cols {
+      overflow: auto; } }
+
+.col {
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+  margin: 30px 15px 0; }
+  @supports (display: grid) {
+    .cols .col {
+      width: auto;
+      margin: 0; } }
+  .col img {
+    display: block;
+    max-width: 100%; }
+  .col video {
+    display: block;
+    max-width: 100%; }
+  .col picture {
+    display: block;
+    max-width: 100%; }
+
+.col--cleared {
+  clear: left; }
+
+.cols-wrapper {
+  background-color: #ccc;
+  margin: 30px 0;
+  padding: 30px 0; }
+
+.col--up-2 {
+  width: 13.66667%;
+  width: calc(16.66667% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(16.66667% - 30px);
+      -ms-flex: 0 1 calc(16.66667% - 30px);
+          flex: 0 1 calc(16.66667% - 30px);
+  grid-column: auto/span 2; }
+
+.col--up-3 {
+  width: 22%;
+  width: calc(25% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(25% - 30px);
+      -ms-flex: 0 1 calc(25% - 30px);
+          flex: 0 1 calc(25% - 30px);
+  grid-column: auto/span 3; }
+
+.col--up-4 {
+  width: 30.33333%;
+  width: calc(33.33333% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(33.33333% - 30px);
+      -ms-flex: 0 1 calc(33.33333% - 30px);
+          flex: 0 1 calc(33.33333% - 30px);
+  grid-column: auto/span 4; }
+
+.col--up-5 {
+  width: 38.66667%;
+  width: calc(41.66667% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(41.66667% - 30px);
+      -ms-flex: 0 1 calc(41.66667% - 30px);
+          flex: 0 1 calc(41.66667% - 30px);
+  grid-column: auto/span 5; }
+
+.col--up-6 {
+  width: 47%;
+  width: calc(50% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(50% - 30px);
+      -ms-flex: 0 1 calc(50% - 30px);
+          flex: 0 1 calc(50% - 30px);
+  grid-column: auto/span 6; }
+
+.col--up-7 {
+  width: 55.33333%;
+  width: calc(58.33333% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(58.33333% - 30px);
+      -ms-flex: 0 1 calc(58.33333% - 30px);
+          flex: 0 1 calc(58.33333% - 30px);
+  grid-column: auto/span 7; }
+
+.col--up-8 {
+  width: 63.66667%;
+  width: calc(66.66667% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(66.66667% - 30px);
+      -ms-flex: 0 1 calc(66.66667% - 30px);
+          flex: 0 1 calc(66.66667% - 30px);
+  grid-column: auto/span 8; }
+
+.col--up-9 {
+  width: 72%;
+  width: calc(75% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(75% - 30px);
+      -ms-flex: 0 1 calc(75% - 30px);
+          flex: 0 1 calc(75% - 30px);
+  grid-column: auto/span 9; }
+
+.col--up-10 {
+  width: 80.33333%;
+  width: calc(83.33333% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(83.33333% - 30px);
+      -ms-flex: 0 1 calc(83.33333% - 30px);
+          flex: 0 1 calc(83.33333% - 30px);
+  grid-column: auto/span 10; }
+
+.col--up-12 {
+  width: 97%;
+  width: calc(100% - 30px);
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 calc(100% - 30px);
+      -ms-flex: 0 1 calc(100% - 30px);
+          flex: 0 1 calc(100% - 30px);
+  grid-column: auto/span 12; }
+
+.col--up-hidden {
+  display: none; }
+
+.col--up-visible {
+  display: block; }
+
+@media (max-width: 62.5rem) {
+  .col--1000-2 {
+    width: 13.66667%;
+    width: calc(16.66667% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(16.66667% - 30px);
+        -ms-flex: 0 1 calc(16.66667% - 30px);
+            flex: 0 1 calc(16.66667% - 30px);
+    grid-column: auto/span 2; }
+  .col--1000-3 {
+    width: 22%;
+    width: calc(25% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(25% - 30px);
+        -ms-flex: 0 1 calc(25% - 30px);
+            flex: 0 1 calc(25% - 30px);
+    grid-column: auto/span 3; }
+  .col--1000-4 {
+    width: 30.33333%;
+    width: calc(33.33333% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(33.33333% - 30px);
+        -ms-flex: 0 1 calc(33.33333% - 30px);
+            flex: 0 1 calc(33.33333% - 30px);
+    grid-column: auto/span 4; }
+  .col--1000-5 {
+    width: 38.66667%;
+    width: calc(41.66667% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(41.66667% - 30px);
+        -ms-flex: 0 1 calc(41.66667% - 30px);
+            flex: 0 1 calc(41.66667% - 30px);
+    grid-column: auto/span 5; }
+  .col--1000-6 {
+    width: 47%;
+    width: calc(50% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(50% - 30px);
+        -ms-flex: 0 1 calc(50% - 30px);
+            flex: 0 1 calc(50% - 30px);
+    grid-column: auto/span 6; }
+  .col--1000-7 {
+    width: 55.33333%;
+    width: calc(58.33333% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(58.33333% - 30px);
+        -ms-flex: 0 1 calc(58.33333% - 30px);
+            flex: 0 1 calc(58.33333% - 30px);
+    grid-column: auto/span 7; }
+  .col--1000-8 {
+    width: 63.66667%;
+    width: calc(66.66667% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(66.66667% - 30px);
+        -ms-flex: 0 1 calc(66.66667% - 30px);
+            flex: 0 1 calc(66.66667% - 30px);
+    grid-column: auto/span 8; }
+  .col--1000-9 {
+    width: 72%;
+    width: calc(75% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(75% - 30px);
+        -ms-flex: 0 1 calc(75% - 30px);
+            flex: 0 1 calc(75% - 30px);
+    grid-column: auto/span 9; }
+  .col--1000-10 {
+    width: 80.33333%;
+    width: calc(83.33333% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(83.33333% - 30px);
+        -ms-flex: 0 1 calc(83.33333% - 30px);
+            flex: 0 1 calc(83.33333% - 30px);
+    grid-column: auto/span 10; }
+  .col--1000-12 {
+    width: 97%;
+    width: calc(100% - 30px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 calc(100% - 30px);
+        -ms-flex: 0 1 calc(100% - 30px);
+            flex: 0 1 calc(100% - 30px);
+    grid-column: auto/span 12; }
+  .col--1000-hidden {
+    display: none; }
+  .col--1000-visible {
+    display: block; } }
+
+@media (max-width: 31.25rem) {
+  .cols {
+    grid-column-gap: 0;
+    -webkit-column-gap: 0;
+       -moz-column-gap: 0;
+            column-gap: 0; }
+  .col {
+    width: 100%;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    margin: 30px 0 0;
+    grid-column: start / end; }
+  .col--500-hidden {
+    display: none; }
+  .col--500-visible {
+    display: block; } }
+>>>>>>> 80c80ec1c54f6fbc014bcf24919fcff2de7e6488
 
 html {
   font: 100%/1.5 'Montserrat', sans-serif; }
@@ -772,6 +1031,7 @@ html {
 body {
   margin: 0; }
 
+<<<<<<< HEAD
 h1 {
   font-weight: 400; }
 
@@ -783,6 +1043,22 @@ h1 {
 
 .col .col {
   font-size: 0.75rem; }
+=======
+header {
+  display: block; }
+
+h1 {
+  font-weight: 400; }
+
+.cols-wrapper {
+  background: #4f4a7b; }
+  .cols-wrapper .col {
+    color: #fff;
+    border-color: #fff; }
+
+.col {
+  background-color: rgba(0, 0, 0, 0.2); }
+>>>>>>> 80c80ec1c54f6fbc014bcf24919fcff2de7e6488
 
 span {
   display: inline-block;
@@ -790,15 +1066,63 @@ span {
   span:last-child {
     margin-right: 0; }
 
+<<<<<<< HEAD
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZXMuY3NzIiwic291cmNlUm9vdCI6IiJ9*/</style></head>
+<body>
+=======
+h2.col {
+  border: none;
+  background-color: transparent;
+  padding: 0; }
+
+.media-wrapper {
+  padding: 0;
+  border: 2px #4f4a7b solid; }
+
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZXMuY3NzIiwic291cmNlUm9vdCI6IiJ9*/</style></head>
 <body>
 
-	<header class="grid">
-		<div class="cols">
-			<div class="col largest-12"><h1>largest-12</h1></div>
-		</div>
+	<header class="cols">
+		<div class="col col--up-12"><h1>col--up-12</h1></div>
 	</header>
 
+	<main>
+		
+		<div class="cols-wrapper">
+			<div class="cols">
+				<div class="col col--up-4 col--1000-6"><span>col--up-4</span><span>col--1000-6</span></div>
+				<div class="col col--up-4 col--1000-6"><span>col--up-4</span><span>col--1000-6</span></div>
+				<div class="col col--up-4 col--1000-6"><span>col--up-4</span><span>col--1000-6</span></div>
+				<div class="col col--up-3 col--1000-6"><span>col--up-3</span><span>col--1000-6</span></div>
+				<div class="col col--up-3 col--1000-6"><span>col--up-3</span><span>col--1000-6</span></div>
+				<div class="col col--up-3 col--1000-hidden"><span>col--up-3</span><span>col--1000-hidden</span></div>
+				<div class="col col--up-3 col--1000-hidden"><span>col--up-3</span><span>col--1000-hidden</span></div>
+				<div class="col col--up-6 col--1000-12"><span>col--up-6</span><span>col--1000-12</span></div>
+				<div class="col col--up-6 col--1000-12"><span>col--up-6</span><span>col--1000-12</span></div>
+			</div>
+		</div>
+>>>>>>> 80c80ec1c54f6fbc014bcf24919fcff2de7e6488
+
+		<div class="cols">
+			<div class="col col--up-3 col--1000-6 media-wrapper"><img src="https://aurelienaries.com/img/ressha/01-small.jpg" alt=""></div>
+			<div class="col col--up-3 col--1000-6 media-wrapper"><img src="https://aurelienaries.com/img/ressha/05-small.jpg" alt=""></div>
+			<div class="col col--up-3 col--1000-6 media-wrapper"><img src="https://aurelienaries.com/img/ressha/03-small.jpg" alt=""></div>
+			<div class="col col--up-3 col--1000-6 media-wrapper"><img src="https://aurelienaries.com/img/ressha/04-small.jpg" alt=""></div>
+		</div>
+		<div class="cols">
+			<div class="col col--up-8 col--1000-hidden col--500-visible"><span>col--up-8</span><span>col--1000-hidden</span><span>col--500-visible</span></div>
+			<div class="col col--up-4 col--1000-12">col--up-4 col--1000-12</div>
+		</div>
+		<div class="cols cols-full">
+			<div class="col col--up-7">col--up-7</div>
+			<div class="col col--up-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quis, excepturi accusantium expedita mollitia ex error distinctio vero voluptatem, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis enim, recusandae, ad ab nostrum eius deserunt maxime et doloremque minus dolor est ducimus sunt voluptatem placeat labore harum iusto maiores. corrupti sed praesentium, numquam rem. Nulla non quaerat, illum corrupti quia!</div>
+		</div>
+		<div class="cols">
+			<h2 class="col col--up-12">It could be a title</h2>
+			<div class="col col--up-6">col--up-6</div>
+			<div class="col col--up-6">col--up-6</div>
+
+<<<<<<< HEAD
 	<main>
 		<div class="wrapper">
 			<div class="grid">
@@ -851,10 +1175,29 @@ span {
 				<div class="col largest-10 largest-offset-2 small-no-offset"><span>largest-10</span><span>largest-offset-2</span><span>small-no-offset</span></div>
 				<div class="col largest-11 largest-offset-1 small-no-offset"><span>largest-11</span><span>largest-offset-1</span><span>small-no-offset</span></div>
 				<div class="col largest-12">largest-12</div>
+=======
+			<div class="col col--up-5">col--up-5</div>
+			<div class="col col--up-7">col--up-7</div>
 
-			</div>
+			<div class="col col--up-2">col--up-2</div>
+			<div class="col col--up-2">col--up-2</div>
+			<div class="col col--up-2">col--up-2</div>
+			<div class="col col--up-2">col--up-2</div>
+			<div class="col col--up-2">col--up-2</div>
+			<div class="col col--up-2">col--up-2</div>
+>>>>>>> 80c80ec1c54f6fbc014bcf24919fcff2de7e6488
+
+			<div class="col col--up-4">col--up-4</div>
+			<div class="col col--up-8">col--up-8</div>
+
+			<div class="col col--up-3">col--up-3</div>
+			<div class="col col--up-9">col--up-9</div>
+
+			<div class="col col--up-2">col--up-2</div>
+			<div class="col col--up-10">col--up-10</div>
+			<div class="col col--up-3 col--1000-7 col--cleared"><span>col--up-3</span><span>col--1000-7</span></div>
 		</div>
 
 	</main>
-</body>
+<script type="text/javascript" src="bundle.js"></script></body>
 </html>
