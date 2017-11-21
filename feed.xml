@@ -1,51 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CSS117 Grid</title>
-    <description>A flexbox based, lightweight (~ 1Ko minified) and highly customizable SASS grid.
+    <title>CSS117 Grid Layout</title>
+    <description>A light SASS grid framework based on the CSS Grid Layout Module and highly customizable.
 </description>
     <link>http://localhost:4000/css117/</link>
     <atom:link href="http://localhost:4000/css117/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 Sep 2017 16:02:38 +0200</pubDate>
-    <lastBuildDate>Sun, 24 Sep 2017 16:02:38 +0200</lastBuildDate>
-    <generator>Jekyll v3.6.0</generator>
+    <pubDate>Tue, 21 Nov 2017 15:46:49 +0100</pubDate>
+    <lastBuildDate>Tue, 21 Nov 2017 15:46:49 +0100</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>Responsive Grid</title>
         <description>&lt;h2 id=&quot;presentation&quot;&gt;Presentation&lt;/h2&gt;
 
-&lt;p&gt;CSS117 is a very smart and flexible grid.&lt;/p&gt;
+&lt;p&gt;CSS117 is a very smart and flexible grid based on the &lt;a href=&quot;http://www.w3.org/TR/css3-grid-layout/&quot;&gt;CSS Grid Layout Module&lt;/a&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;No need to wrap individual rows&lt;/li&gt;
   &lt;li&gt;No need to tag last columns with classes&lt;/li&gt;
   &lt;li&gt;Highly customizable through &lt;a href=&quot;#customize-variables&quot;&gt;variables&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Grid can be &lt;a href=&quot;#nested-grid&quot;&gt;nested&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-3 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-3 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-hidden small-visible&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-12 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-3 col--1000-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-3 col--1000-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-6 col--1000-hidden col--500-visible&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-12 col--1000-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-6 col--1000-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-6 col--1000-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div class=&quot;doc&quot;&gt;
-    &lt;div class=&quot;grid&quot;&gt;
-        &lt;div class=&quot;cols&quot;&gt;
-            &lt;div class=&quot;col large-3 medium-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;1&lt;/span&gt;&lt;br /&gt;large-3&lt;br /&gt;medium-6 &lt;/div&gt;
-            &lt;div class=&quot;col large-3 medium-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;2&lt;/span&gt;&lt;br /&gt;large-3&lt;br /&gt;medium-6 &lt;/div&gt;
-            &lt;div class=&quot;col large-6 medium-hidden small-visible&quot;&gt; &lt;span class=&quot;increment&quot;&gt;3&lt;/span&gt;&lt;br /&gt;large-6&lt;br /&gt;medium-hidden small-visible &lt;/div&gt;
-            &lt;div class=&quot;col large-12 medium-4&quot;&gt; &lt;span class=&quot;increment&quot;&gt;4&lt;/span&gt;&lt;br /&gt;large-12&lt;br /&gt;medium-4 &lt;/div&gt;
-            &lt;div class=&quot;col large-6 medium-8&quot;&gt; &lt;span class=&quot;increment&quot;&gt;5&lt;/span&gt;&lt;br /&gt;large-6&lt;br /&gt;medium-8 &lt;/div&gt;
-            &lt;div class=&quot;col large-6 medium-12&quot;&gt; &lt;span class=&quot;increment&quot;&gt;6&lt;/span&gt;&lt;br /&gt;large-6&lt;br /&gt;medium-12 &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+&lt;div class=&quot;demo-cols&quot;&gt;
+  &lt;div class=&quot;demo-col demo-col--up-3 demo-col--1000-6&quot;&gt;
+    &lt;span class=&quot;increment&quot;&gt;1&lt;/span&gt;&lt;br /&gt;
+    &lt;span class=&quot;em demo-col--1000-hidden&quot;&gt;col--up-3&lt;/span&gt;
+    &lt;span class=&quot;em demo-col--up-hidden demo-col--500-hidden demo-col--1000-visible&quot;&gt;col--1000-6&lt;/span&gt;
+    &lt;span class=&quot;em demo-col--up-hidden demo-col--500-visible demo-col--500-12&quot;&gt;col--500-12&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;demo-col demo-col--up-3 demo-col--1000-6&quot;&gt;
+    &lt;span class=&quot;increment&quot;&gt;2&lt;/span&gt;&lt;br /&gt;
+    &lt;span class=&quot;em demo-col--1000-hidden&quot;&gt;col--up-3&lt;/span&gt;
+    &lt;span class=&quot;em demo-col--up-hidden demo-col--500-hidden demo-col--1000-visible&quot;&gt;col--1000-6&lt;/span&gt;
+    &lt;span class=&quot;em demo-col--up-hidden demo-col--500-visible demo-col--500-12&quot;&gt;col--500-12&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;demo-col demo-col--up-6 demo-col--1000-hidden demo-col--500-visible&quot;&gt;
+    &lt;span class=&quot;increment&quot;&gt;3&lt;/span&gt;&lt;br /&gt;
+    &lt;span class=&quot;em demo-col--1000-hidden&quot;&gt;col--up-6&lt;/span&gt;
+    &lt;br /&gt;col--1000-hidden&lt;br /&gt;
+    &lt;span class=&quot;em demo-col--up-hidden demo-col--500-visible&quot;&gt;col--500-visible&lt;br /&gt;col--500-12&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;demo-col demo-col--up-12 demo-col--1000-4&quot;&gt;
+    &lt;span class=&quot;increment&quot;&gt;4&lt;/span&gt;&lt;br /&gt;
+    &lt;span class=&quot;em demo-col--1000-hidden&quot;&gt;col--up-12&lt;/span&gt;
+    &lt;span class=&quot;em demo-col--up-hidden demo-col--1000-visible demo-col--500-hidden&quot;&gt;col--1000-4 &lt;/span&gt;
+    &lt;span class=&quot;em demo-col--up-hidden demo-col--500-visible demo-col--500-12&quot;&gt;col--500-12&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;demo-col demo-col--up-6 demo-col--1000-8&quot;&gt;
+      &lt;span class=&quot;increment&quot;&gt;5&lt;/span&gt;&lt;br /&gt;
+      &lt;span class=&quot;em demo-col--1000-hidden&quot;&gt;col--up-6&lt;/span&gt;
+      &lt;span class=&quot;em demo-col--up-hidden demo-col--500-hidden demo-col--1000-visible&quot;&gt;col--1000-8&lt;/span&gt;
+      &lt;span class=&quot;em demo-col--up-hidden demo-col--500-visible demo-col--500-12&quot;&gt;col--500-12&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;demo-col demo-col--up-6 demo-col--1000-12&quot;&gt;
+      &lt;span class=&quot;increment&quot;&gt;6&lt;/span&gt;&lt;br /&gt;
+      &lt;span class=&quot;em demo-col--1000-hidden&quot;&gt;col--up-6&lt;/span&gt;
+      &lt;span class=&quot;em demo-col--up-hidden demo-col--500-hidden demo-col--1000-visible&quot;&gt;col--1000-12&lt;/span&gt;
+      &lt;span class=&quot;em demo-col--up-hidden demo-col--500-visible demo-col--500-12&quot;&gt;col--500-12&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;flexbox-and-float-fallbacks&quot;&gt;Flexbox and float fallbacks&lt;/h2&gt;
+
+&lt;p&gt;Because Internet Explorer from 10 to 15 uses the old specification of the module (2011), CSS117 Grid Layout doesn’t use the &lt;code class=&quot;highlighter-rouge&quot;&gt;-ms-&lt;/code&gt; prefix,  particulary since auto-placement is not possible (&lt;code class=&quot;highlighter-rouge&quot;&gt;-ms-grid-column: auto;&lt;/code&gt;doesn’t work).&lt;/p&gt;
+
+&lt;p&gt;There’s a &lt;code class=&quot;highlighter-rouge&quot;&gt;flexbox&lt;/code&gt; fallback for &lt;strong&gt;Internet Explorer from 11 to 15&lt;/strong&gt; and a &lt;code class=&quot;highlighter-rouge&quot;&gt;float: left&lt;/code&gt; one for earlier version (&lt;strong&gt;IE10-&lt;/strong&gt;) (which works like a charm). Check the fallback &lt;a href=&quot;#customize-variables&quot;&gt;variables&lt;/a&gt; for more details.&lt;/p&gt;
 
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
@@ -65,100 +97,91 @@
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// And in your main SASS file
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./node_modules/css117/css117.scss'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;install-manually&quot;&gt;Install manually&lt;/h4&gt;
+&lt;h4 id=&quot;manually&quot;&gt;Manually&lt;/h4&gt;
 
-&lt;p&gt;Download from the Github repo (&lt;a href=&quot;https://github.com/aastudio/css117/archive/master.zip&quot;&gt;master.zip&lt;/a&gt;)&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;And&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;css117&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.scss&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;SASS&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;file&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Download from the Github repo (&lt;a href=&quot;https://github.com/aastudio/css117/archive/master.zip&quot;&gt;master.zip&lt;/a&gt;) and import css117 scss in your main SASS file.&lt;/p&gt;
 
 &lt;h3 id=&quot;02-copy-and-paste-variables&quot;&gt;02. Copy and paste variables&lt;/h3&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Copy and paste variables from &lt;code class=&quot;highlighter-rouge&quot;&gt;css117.scss&lt;/code&gt; to your variables file.&lt;/li&gt;
-  &lt;li&gt;Remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;!default&lt;/code&gt; flag&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Variables
-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$css117-settings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;grid-class-name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;s1&quot;&gt;'grid'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cols-class-name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;s1&quot;&gt;'cols'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;col-class-name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;         &lt;span class=&quot;s1&quot;&gt;'col'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;largest-breakpoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;s1&quot;&gt;'large'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;full-width-on-smallest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;m&quot;&gt;1000px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;gutter-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;           &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;nb-of-columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;          &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;columns-start-from&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;choose-columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;         &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;which-columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;          &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;nested&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;                 &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;nested-start-from&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;choose-nested-columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;which-nested-columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;grid-margin-top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;grid-margin-bottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;grid-padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;           &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;col-margin-top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;         &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;col-margin-bottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;col-padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;            &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;centered&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;               &lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;offset-class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;           &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;offset-class-name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;s1&quot;&gt;'offset'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;visibility-class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;       &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;                    &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;                  &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;$css117-breakpoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;800px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;small&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;500px&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;ul&gt;
+  &lt;li&gt;Copy and paste variables from &lt;a href=&quot;https://github.com/aastudio/css117/blob/master/css117.scss&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css117.scss&lt;/code&gt;&lt;/a&gt; to your variables file.&lt;/li&gt;
+  &lt;li&gt;Remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;!default&lt;/code&gt; flags at &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-breakpoints&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-space&lt;/code&gt;&amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-variables&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;03-set-up-your-html&quot;&gt;03. Set up your html&lt;/h3&gt;
 
 &lt;p&gt;Set up your html as followed :&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6 small-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 small-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-3 small-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-2 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        ...
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-4 col--1000-6 col--500-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-4 col--1000-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-4 col--1000-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-6 col--500-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-3 col--500-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-2 col--1000-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-2 col--1000-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-2 col--1000-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  ...
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE :&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The two wrappers, &lt;code class=&quot;highlighter-rouge&quot;&gt;.grid&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.cols&lt;/code&gt;, are mandatory (the secret sauce of the grid)&lt;/li&gt;
-  &lt;li&gt;The classes &lt;code class=&quot;highlighter-rouge&quot;&gt;medium-&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;small-&lt;/code&gt; are created automatically from the map &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-breakpoints&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;The narrowest breakpoint must be called &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;You can add any other breakpoint between, directly in the map &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-breakpoints&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;h2 id=&quot;customize-variables&quot;&gt;Customize variables&lt;/h2&gt;
 
-&lt;p&gt;Below are the variables from the &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-grid-settings&lt;/code&gt; SASS map :&lt;/p&gt;
+&lt;p&gt;Below are the variables from the &lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-variables&lt;/code&gt; SASS map :&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;SASS variables&lt;/th&gt;
+      &lt;th&gt;DRY variables&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-space&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Helper to define consistent spacing (gutters…)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-col&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;string&lt;/td&gt;
+      &lt;td&gt;Define the class name of the grid items&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-medias&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;img,...&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;list&lt;/td&gt;
+      &lt;td&gt;A list for Responsive media HTML tag&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Breakpoints value&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-bkpts&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;800, 500&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;list&lt;/td&gt;
+      &lt;td&gt;Define the different breakpoints of the grid &lt;a href=&quot;#toto&quot;&gt;more&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Classes name&lt;/th&gt;
       &lt;th&gt;Default&lt;/th&gt;
       &lt;th&gt;Type&lt;/th&gt;
       &lt;th&gt;Description&lt;/th&gt;
@@ -167,27 +190,34 @@
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-class-name&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;string&lt;/td&gt;
-      &lt;td&gt;Customize the first wrapper class name&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cols-class-name&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cols&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;string&lt;/td&gt;
-      &lt;td&gt;Customize the second wrapper class name&lt;/td&gt;
+      &lt;td&gt;Define the grid class name&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-class-name&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$css117-col&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;string&lt;/td&gt;
-      &lt;td&gt;Customize columns class name&lt;/td&gt;
+      &lt;td&gt;Define columns class name&lt;/td&gt;
     &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Breakpoints&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;largest-breakpoint&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;large&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col--up&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;string&lt;/td&gt;
-      &lt;td&gt;Customize largest column class name&lt;/td&gt;
+      &lt;td&gt;Define the largest column class name&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;full-width-on-small&lt;/code&gt;&lt;/td&gt;
@@ -195,18 +225,38 @@
       &lt;td&gt;boolean&lt;/td&gt;
       &lt;td&gt;Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; to have a unique &lt;a href=&quot;#fullwidth-on-small-breakpoints&quot;&gt;fullwidth&lt;/a&gt; on the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; breakpoint&lt;/td&gt;
     &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Grid max-width&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;max-width&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;960px&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1200px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;px or %&lt;/td&gt;
       &lt;td&gt;Define the max-width of the grid&lt;/td&gt;
     &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gutter-width&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;pixels&lt;/td&gt;
-      &lt;td&gt;Define the width of gutters&lt;/td&gt;
+      &lt;th&gt;Columns settings&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
     &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nb-of-columns&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;12&lt;/code&gt;&lt;/td&gt;
@@ -217,7 +267,7 @@
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;columns-start-from&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;integer&lt;/td&gt;
-      &lt;td&gt;Because we usually don’t use class like &lt;code class=&quot;highlighter-rouge&quot;&gt;large-1&lt;/code&gt;, you can set from which column number to start.&lt;br /&gt;It’s a good way to reduce file size.&lt;/td&gt;
+      &lt;td&gt;Because we usually don’t have a &lt;code class=&quot;highlighter-rouge&quot;&gt;col--up-1&lt;/code&gt; column, you can set from which column number to start. It’s a good way to reduce file size.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;choose-columns&lt;/code&gt;&lt;/td&gt;
@@ -231,30 +281,19 @@
       &lt;td&gt;list&lt;/td&gt;
       &lt;td&gt;List the number you need when &lt;code class=&quot;highlighter-rouge&quot;&gt;choose-columns&lt;/code&gt; is true&lt;/td&gt;
     &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nested&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;boolean&lt;/td&gt;
-      &lt;td&gt;Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; to nest grids&lt;/td&gt;
+      &lt;th&gt;Spacing&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
     &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nested-start-from&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;integer&lt;/td&gt;
-      &lt;td&gt;Same as &lt;code class=&quot;highlighter-rouge&quot;&gt;columns-start-from&lt;/code&gt; but for nested grids&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;choose-nested-columns&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;boolean&lt;/td&gt;
-      &lt;td&gt;Same as &lt;code class=&quot;highlighter-rouge&quot;&gt;choose-columns&lt;/code&gt; but for nested grids&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;which-nested-columns&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(4,6,8,12)&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;list&lt;/td&gt;
-      &lt;td&gt;Same as &lt;code class=&quot;highlighter-rouge&quot;&gt;which-columns&lt;/code&gt; but for nested grids&lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-margin-top&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/td&gt;
@@ -263,19 +302,49 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-margin-bottom&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;pixels&lt;/td&gt;
       &lt;td&gt;Define the margin bottom of the grid&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-padding&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-margin-left&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;pixels&lt;/td&gt;
-      &lt;td&gt;Define the padding of the grid (can be : &lt;code class=&quot;highlighter-rouge&quot;&gt;30px 10px 0 5px&lt;/code&gt;)&lt;/td&gt;
+      &lt;td&gt;Define the margin left of the grid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-margin-right&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the margin right of the grid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-padding-top&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding top of the grid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-padding-bottom&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding bottom of the grid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-padding-left&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding left of the grid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-padding-right&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding right of the grid&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-margin-top&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;pixels&lt;/td&gt;
       &lt;td&gt;Define the margin top of columns&lt;/td&gt;
     &lt;/tr&gt;
@@ -286,35 +355,172 @@
       &lt;td&gt;Define the margin bottom of columns&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-padding&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;20px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gutter-width&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;pixels&lt;/td&gt;
-      &lt;td&gt;Define the padding of columns&lt;/td&gt;
+      &lt;td&gt;Define the width of gutters&lt;/td&gt;
     &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gutter-height&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the height of gutters&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-padding-top&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding top of the col&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-padding-bottom&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding bottom of the col&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-padding-left&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding left of the col&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col-padding-right&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding right of the col&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Add a wrapper ?&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wrapper&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;boolean&lt;/td&gt;
+      &lt;td&gt;Add a full width wrapp around some rows.&lt;br /&gt;&lt;a href=&quot;http://aastudio.github.io/css117/demo.html&quot;&gt;Check the demo&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wrapper-class-name&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the class name of the wrapper&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wrapper-margin-top&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the margin top of the wrapper&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wrapper-margin-bottom&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the margin bottom of the wrapper&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wrapper-padding-top&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;60px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding top of the wrapper&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wrapper-padding-bottom&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;60px&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;pixels&lt;/td&gt;
+      &lt;td&gt;Define the padding bottom of the wrapper&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Browser Support&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-feature&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;boolean&lt;/td&gt;
+      &lt;td&gt;Use the grid module layout&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flexbox-fallback&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;boolean&lt;/td&gt;
+      &lt;td&gt;Add a flexbox for &lt;a href=&quot;http://caniuse.com/#feat=css-grid&quot;&gt;browser that don’t support Grid&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float-fallback&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;boolean&lt;/td&gt;
+      &lt;td&gt;Add a float:left for &lt;a href=&quot;http://caniuse.com/#feat=css-grid&quot;&gt;browser that don’t support Grid&lt;/a&gt; or &lt;a href=&quot;http://caniuse.com/#feat=flexbox&quot;&gt;flex&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Alignement of the grid&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;centered&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;boolean&lt;/td&gt;
       &lt;td&gt;Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; to center the grid on the page&lt;/td&gt;
     &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;offset-class&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;boolean&lt;/td&gt;
-      &lt;td&gt;Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; if you need &lt;a href=&quot;#offset-classes&quot;&gt;offset classes&lt;/a&gt;&lt;/td&gt;
+      &lt;th&gt;Visibility Classes&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
     &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;offset-class-name&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;offset&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;string&lt;/td&gt;
-      &lt;td&gt;Customize name of offset classes. Works if &lt;code class=&quot;highlighter-rouge&quot;&gt;offset-class&lt;/code&gt; is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;visibility-class&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;boolean&lt;/td&gt;
       &lt;td&gt;Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; if you need &lt;a href=&quot;#visibility-classes&quot;&gt;visibility classes&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Production mode&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/td&gt;
@@ -330,134 +536,80 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&quot;nested-grid&quot;&gt;Nested grid&lt;/h3&gt;
-
-&lt;p&gt;To nest grids, insert a &lt;code class=&quot;highlighter-rouge&quot;&gt;.cols&lt;/code&gt; inside a root column (no need for &lt;code class=&quot;highlighter-rouge&quot;&gt;.grid&lt;/code&gt; class anymore) :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;doc&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-                &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- nested grid --&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /end --&amp;gt;&lt;/span&gt;
-
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-6 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                ...
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div class=&quot;doc&quot;&gt;
-    &lt;div class=&quot;grid&quot;&gt;
-        &lt;div class=&quot;cols&quot;&gt;
-            &lt;div class=&quot;col large-6 medium-6&quot;&gt;
-                &lt;div class=&quot;cols&quot;&gt;
-                    &lt;div class=&quot;col large-6 medium-8&quot;&gt;&lt;span class=&quot;increment&quot;&gt;1.1&lt;/span&gt;&lt;br /&gt;large-6&lt;br /&gt;medium-8&lt;/div&gt;
-                    &lt;div class=&quot;col large-6 medium-4&quot;&gt; &lt;span class=&quot;increment&quot;&gt;1.2&lt;/span&gt;&lt;br /&gt;large-6&lt;br /&gt;medium-4 &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;col large-6 medium-6&quot;&gt;
-                &lt;div class=&quot;cols&quot;&gt;
-                    &lt;div class=&quot;col large-4 medium-12&quot;&gt;&lt;span class=&quot;increment&quot;&gt;2.1&lt;/span&gt;&lt;br /&gt;large-4&lt;br /&gt;medium-12&lt;/div&gt;
-                    &lt;div class=&quot;col large-8 medium-12&quot;&gt; &lt;span class=&quot;increment&quot;&gt;2.2&lt;/span&gt;&lt;br /&gt;large-8&lt;br /&gt;medium-12&lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;col large-12&quot;&gt;
-                &lt;div class=&quot;cols&quot;&gt;
-                    &lt;div class=&quot;col large-8 medium-6&quot;&gt;&lt;span class=&quot;increment&quot;&gt;3.1&lt;/span&gt;&lt;br /&gt;large-8&lt;br /&gt;medium-6&lt;/div&gt;
-                    &lt;div class=&quot;col large-4 medium-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;3.2&lt;/span&gt;&lt;br /&gt;large-4&lt;br /&gt;medium-6 &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
 &lt;h3 id=&quot;fullwidth-on-small-breakpoints&quot;&gt;Fullwidth on small breakpoints&lt;/h3&gt;
 
-&lt;p&gt;By default, each column, on the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; breakpoint, of has different size, but in actual use, you probably want to set a unique fullwidth.&lt;/p&gt;
+&lt;p&gt;To set a unique fullwidth on the smallest breakpoint.&lt;br /&gt;Therefore you don’t need the smallest breakpoint class on your markup :&lt;/p&gt;
 
-&lt;p&gt;If set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, you don’t need the &lt;code class=&quot;highlighter-rouge&quot;&gt;small&lt;/code&gt; class on your markup :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-4 medium-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        ...
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-4 col--1000-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-4 col--1000-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-4 col--1000-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  ...
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div class=&quot;doc&quot;&gt;
-    &lt;div class=&quot;grid&quot;&gt;
-        &lt;div class=&quot;cols&quot;&gt;
-            &lt;div class=&quot;col large-4 medium-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;1&lt;/span&gt;&lt;br /&gt;large-4&lt;br /&gt;medium-6 &lt;/div&gt;
-            &lt;div class=&quot;col large-4 medium-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;2&lt;/span&gt;&lt;br /&gt;large-4&lt;br /&gt;medium-6 &lt;/div&gt;
-            &lt;div class=&quot;col large-4 medium-12&quot;&gt; &lt;span class=&quot;increment&quot;&gt;3&lt;/span&gt;&lt;br /&gt;large-4&lt;br /&gt;medium-12 &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+  &lt;div class=&quot;demo-cols&quot;&gt;
+    &lt;div class=&quot;demo-col demo-col--up-4 demo-col--1000-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;1&lt;/span&gt;&lt;br /&gt;col--up-4&lt;br /&gt;col--1000-6 &lt;/div&gt;
+    &lt;div class=&quot;demo-col demo-col--up-4 demo-col--1000-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;2&lt;/span&gt;&lt;br /&gt;col--up-4&lt;br /&gt;col--1000-6 &lt;/div&gt;
+    &lt;div class=&quot;demo-col demo-col--up-4 demo-col--1000-12&quot;&gt; &lt;span class=&quot;increment&quot;&gt;3&lt;/span&gt;&lt;br /&gt;col--up-4&lt;br /&gt;col--1000-12 &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;h3 id=&quot;offset-classes&quot;&gt;Offset classes&lt;/h3&gt;
-
-&lt;p&gt;Offset classes let you indent some columns.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-5 large-offset-2 medium-no-offset medium-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-5 medium-offset-5 medium-7 small-no-offset&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        ...
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div class=&quot;doc&quot;&gt;
-    &lt;div class=&quot;grid&quot;&gt;
-        &lt;div class=&quot;cols&quot;&gt;
-            &lt;div class=&quot;col large-12&quot;&gt; &lt;span class=&quot;increment&quot;&gt;1&lt;/span&gt;&lt;br /&gt;large-12 &lt;/div&gt;
-            &lt;div class=&quot;col large-5 large-offset-2 medium-no-offset medium-12&quot;&gt; &lt;span class=&quot;increment&quot;&gt;2&lt;/span&gt;&lt;br /&gt;large-5 &lt;strong&gt;large-offset-2&lt;br /&gt;medium-no-offset&lt;/strong&gt; medium-12 &lt;/div&gt;
-            &lt;div class=&quot;col large-5 medium-offset-5 medium-7 small-no-offset&quot;&gt; &lt;span class=&quot;increment&quot;&gt;3&lt;/span&gt;&lt;br /&gt;large-5&lt;br /&gt;&lt;strong&gt;medium-offset-5&lt;/strong&gt; medium-7&lt;br /&gt;&lt;strong&gt;small-no-offset&lt;/strong&gt; &lt;/div&gt;
-            &lt;div class=&quot;col large-12&quot;&gt; &lt;span class=&quot;increment&quot;&gt;4&lt;/span&gt;&lt;br /&gt;large-12 &lt;/div&gt;
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;It is written &lt;code class=&quot;highlighter-rouge&quot;&gt;BREAKPOINT-offset-NUMBER&lt;/code&gt;. Example : &lt;code class=&quot;highlighter-rouge&quot;&gt;large-offset-2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;medium-offset-7&lt;/code&gt;, etc.&lt;/li&gt;
-  &lt;li&gt;It comes also some no-offset classes : &lt;code class=&quot;highlighter-rouge&quot;&gt;medium-no-offset&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;small-no-offset&lt;/code&gt;, etc.&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;h3 id=&quot;visibility-classes&quot;&gt;Visibility classes&lt;/h3&gt;
 
-&lt;p&gt;Visibility classes let you show or hide columns based on screen size. It creates a -hidden and -visible classes : &lt;code class=&quot;highlighter-rouge&quot;&gt;large-hidden&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;medium-visible&lt;/code&gt;, etc.&lt;/p&gt;
+&lt;p&gt;Creates a &lt;code class=&quot;highlighter-rouge&quot;&gt;-hidden&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;-visible classes&lt;/code&gt; :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col--up-hidden&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;col--1000-visible&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-12 medium-hidden&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-hidden medium-visible medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col large-12 medium-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        ...
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cols&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-12 col--1000-hidden&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; ... &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-hidden col--1000-visible col--1000-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col col--up-12 col--1000-6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  ...
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div class=&quot;doc&quot;&gt;
-    &lt;div class=&quot;grid&quot;&gt;
-        &lt;div class=&quot;cols&quot;&gt;
-            &lt;div class=&quot;col large-12 medium-hidden&quot;&gt; &lt;span class=&quot;increment&quot;&gt;1&lt;/span&gt;&lt;br /&gt;large-12&lt;br /&gt;&lt;strong&gt;medium-hidden&lt;/strong&gt; &lt;/div&gt;
-            &lt;div class=&quot;col large-hidden medium-visible medium-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;2&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;large-hidden&lt;br /&gt;medium-visible&lt;/strong&gt; medium-6 &lt;/div&gt;
-            &lt;div class=&quot;col large-12 medium-6&quot;&gt; &lt;span class=&quot;increment&quot;&gt;3&lt;/span&gt;&lt;br /&gt;large-12&lt;br /&gt;medium-6 &lt;/div&gt;
-            ...
-        &lt;/div&gt;
+  &lt;div class=&quot;demo-cols&quot;&gt;
+    &lt;div class=&quot;demo-col demo-col--up-12 demo-col--1000-hidden&quot;&gt;
+      &lt;span class=&quot;increment&quot;&gt;1&lt;/span&gt;&lt;br /&gt;
+      col--up-12&lt;br /&gt;
+      col--1000-hidden
     &lt;/div&gt;
+    &lt;div class=&quot;demo-col demo-col--up-hidden demo-col--1000-visible demo-col--1000-6&quot;&gt;
+      &lt;span class=&quot;increment&quot;&gt;2&lt;/span&gt;&lt;br /&gt;
+      col--up-hidden&lt;br /&gt;
+      col--1000-visible&lt;br /&gt;
+      col--1000-6
+    &lt;/div&gt;
+    &lt;div class=&quot;demo-col demo-col--up-12 demo-col--1000-6&quot;&gt;
+      &lt;span class=&quot;increment&quot;&gt;3&lt;/span&gt;&lt;br /&gt;
+      col--up-12&lt;br /&gt;
+      col--1000-6
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;previous-versions&quot;&gt;Previous versions&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/aastudio/css117/tree/v1.3.0&quot; target=&quot;_blank&quot;&gt;v1.3&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;Flexbox Version&lt;/td&gt;
+      &lt;td&gt;&lt;small&gt;September 2017&lt;/small&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/aastudio/css117/blob/1.2.1/CHANGELOG.md&quot; target=&quot;_blank&quot;&gt;v1.2&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;Older version (inline-block, IE8-)&lt;/td&gt;
+      &lt;td&gt;&lt;small&gt;June 2017&lt;/small&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;well&quot;&gt;Check the logs : &lt;a href=&quot;https://github.com/aastudio/css117/blob/master/CHANGELOG.md&quot;&gt;https://github.com/aastudio/css117/blob/master/CHANGELOG.md&lt;/a&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 28 Dec 2015 00:00:00 +0100</pubDate>
         <link>http://localhost:4000/css117/2015/12/28/grid.html</link>
